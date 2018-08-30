@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Saksham\'18</string>
+    <string name="team">Team</string>
+    <string name="gold">Gold</string>
+    <string name="silver">Silver</string>
+    <string name="bronze">Bronze</string>
+    <string name="total">Total</string>
+    <string name="read_more">Read More</string>
 </resources>
