@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <com.github.florent37.shapeofview.shapes.ArcView
@@ -37,77 +37,205 @@
             app:cardUseCompatPadding="true">
 
             <LinearLayout
-                android:id="@+id/medal_tally_linear_root"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/medal_tally_year"
+                <LinearLayout
+                    android:id="@+id/medal_tally_linear_root"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:padding="2dp"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="18sp"
-                    android:text="@string/current_year"
-                    tools:text="2018" />
+                    android:background="@color/colorPrimary"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/medal_tally_year"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="@string/current_year"
+                        android:textColor="@color/primary_text"
+                        android:textSize="18sp"
+                        tools:text="2018" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="6"
+                            android:gravity="center"
+                            android:text="@string/team"
+                            android:textColor="@color/colorAccent" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/gold"
+                            android:src="@drawable/gold_medal" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/silver"
+                            android:src="@drawable/silver_medal" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/bronze"
+                            android:src="@drawable/bronze_medal" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:text="@string/total"
+                            android:textColor="@color/colorAccent" />
+                    </LinearLayout>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="4dp">
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="6"
+                        android:layout_height="24dp"
+                        android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/team"
+                        android:text="@string/_2017"
                         android:textColor="@color/colorAccent" />
-
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/gold"
-                        android:src="@drawable/gold_medal" />
-
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/silver"
-                        android:src="@drawable/silver_medal" />
-
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:contentDescription="@string/bronze"
-                        android:src="@drawable/bronze_medal" />
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="2"
+                        android:layout_height="24dp"
+                        android:layout_weight="1"
                         android:gravity="center"
-                        android:text="@string/total"
+                        android:text="@string/_2018"
                         android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/_2019"
+                        android:textColor="@color/colorAccent" />
+
                 </LinearLayout>
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/poll_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/poll_chart"
+                    android:layout_centerHorizontal="true"
+                    android:padding="4dp">
+
+                    <ImageView
+                        android:id="@+id/vote_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_margin="4dp"
+                        android:src="@drawable/elections"
+                        android:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="4dp"
+                        android:layout_toRightOf="@id/vote_icon"
+                        android:text="Your Vote"
+                        android:textColor="@color/colorAccent" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/primary_text" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/feed"
+                android:textColor="@color/primary_text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/primary_text" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/news_feed_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
 
     </LinearLayout>
 

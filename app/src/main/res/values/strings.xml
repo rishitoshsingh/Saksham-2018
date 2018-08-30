@@ -6,5 +6,9 @@
     <string name="bronze">Bronze</string>
     <string name="total">Total</string>
     <string name="read_more">Read More</string>
-    <string name="current_year">2018</string>
+    <string name="current_year">2018's Medal Tally</string>
+    <string name="_2017">2017</string>
+    <string name="_2018">2018</string>
+    <string name="_2019">2019</string>
+    <string name="feed">News Feed</string>
 </resources>
