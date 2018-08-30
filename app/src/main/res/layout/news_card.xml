@@ -37,7 +37,7 @@
                     android:id="@+id/news_icon"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:src="@drawable/gold-medal" />
+                    android:src="@drawable/gold_medal" />
 
                 <TextView
                     android:textStyle="bold"

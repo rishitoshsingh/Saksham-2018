@@ -26,13 +26,88 @@
 
         </com.github.florent37.shapeofview.shapes.ArcView>
 
-        <android.support.v7.widget.RecyclerView
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:orientation="horizontal"
-            android:padding="4dp">
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true">
 
-        </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:id="@+id/medal_tally_linear_root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/medal_tally_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:text="@string/current_year"
+                    tools:text="2018" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="6"
+                        android:gravity="center"
+                        android:text="@string/team"
+                        android:textColor="@color/colorAccent" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/gold"
+                        android:src="@drawable/gold_medal" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/silver"
+                        android:src="@drawable/silver_medal" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/bronze"
+                        android:src="@drawable/bronze_medal" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="@string/total"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 

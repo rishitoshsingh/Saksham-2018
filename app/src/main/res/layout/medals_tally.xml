@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -50,7 +49,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:contentDescription="@string/gold"
-                android:src="@drawable/gold-medal" />
+                android:src="@drawable/gold_medal" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -58,7 +57,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:contentDescription="@string/silver"
-                android:src="@drawable/silver-medal" />
+                android:src="@drawable/silver_medal" />
 
             <ImageView
                 android:layout_width="0dp"
@@ -66,7 +65,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:contentDescription="@string/bronze"
-                android:src="@drawable/bronze-medal" />
+                android:src="@drawable/bronze_medal" />
 
             <TextView
                 android:layout_width="0dp"
