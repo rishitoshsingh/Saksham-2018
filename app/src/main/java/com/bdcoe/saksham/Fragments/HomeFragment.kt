@@ -19,6 +19,11 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.interfaces.datasets.IPieDataSet
 import com.github.mikephil.charting.utils.ColorTemplate
+import android.R.attr.label
+import com.github.mikephil.charting.components.LegendEntry
+import java.nio.file.Files.size
+
+
 
 
 /**
@@ -56,25 +61,38 @@ class HomeFragment : Fragment() {
 
 // creating labels
         val labels = ArrayList<String>()
-        labels.add("January")
-        labels.add("February")
-        labels.add("March")
-        labels.add("April")
-        labels.add("May")
-        labels.add("June")
-
-        val data = PieData(dataset) // initialize Piedata
-        pieChart.data = data
+        labels.add("CS")
+        labels.add("IT")
+        labels.add("EC")
+        labels.add("ME")
+        labels.add("EN")
+        labels.add("CE/EI")
+        labels.add("MBA/MCA")
         val colorList = ArrayList<Int>()
         colorList.add(Color.RED)
-        colorList.add(Color.BLACK)
+        colorList.add(resources.getColor(R.color.secondary_text))
         colorList.add(Color.GREEN)
         colorList.add(Color.CYAN)
         colorList.add(Color.BLUE)
         colorList.add(resources.getColor(R.color.purple))
+
+        val entriesData = ArrayList<LegendEntry>()
+
+        for (i in 0 until labels.size-1) {
+            val entry = LegendEntry()
+            entry.formColor = colorList[i]
+            entry.label = labels[i]
+            entriesData.add(entry)
+        }
+
+        pieChart.legend.setCustom(entriesData)
+
+        val data = PieData(dataset) // initialize Piedata
+        pieChart.data = data
+
         dataset.colors = colorList
-//        pieChart.animateY(5000)
-        pieChart.animateX(500)
+        pieChart.animateY(5000)
+//        pieChart.animateX(500)
 
     }
 }// Required empty public constructor
