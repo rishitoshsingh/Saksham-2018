@@ -18,17 +18,28 @@
             app:shape_arc_height="20dp"
             app:shape_arc_position="bottom">
 
-            <ImageView
+            <LinearLayout
+                android:id="@+id/header_background"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="center"
-                android:src="@drawable/header" />
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical" />
 
         </com.github.florent37.shapeofview.shapes.ArcView>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:padding="16dp"
+            android:text="@string/medal_tally_2018"
+            android:textColor="@color/primary_text"
+            android:textSize="22sp" />
+
+
         <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
@@ -48,20 +59,20 @@
                     android:background="@color/colorPrimary"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/medal_tally_year"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:padding="2dp"
-                        android:text="@string/current_year"
-                        android:textColor="@color/primary_text"
-                        android:textSize="18sp"
-                        tools:text="2018" />
+                    <!--<TextView-->
+                    <!--android:id="@+id/medal_tally_year"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:padding="2dp"-->
+                    <!--android:text="@string/current_year"-->
+                    <!--android:textColor="@color/primary_text"-->
+                    <!--android:textSize="18sp"-->
+                    <!--tools:text="2018" />-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:orientation="horizontal"
@@ -69,12 +80,13 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:layout_weight="6"
+                            android:layout_weight="3"
                             android:gravity="center"
                             android:text="@string/team"
-                            android:textColor="@color/colorAccent" />
+                            android:textColor="@color/primary_text"
+                            android:textSize="18sp" />
 
                         <ImageView
                             android:layout_width="0dp"
@@ -107,8 +119,23 @@
                             android:layout_weight="2"
                             android:gravity="center"
                             android:text="@string/total"
-                            android:textColor="@color/colorAccent" />
+                            android:textColor="@color/primary_text"
+                            android:textSize="18sp" />
                     </LinearLayout>
+
+                    <include layout="@layout/medal_tally_row" />
+
+                    <include layout="@layout/medal_tally_row" />
+
+                    <include layout="@layout/medal_tally_row" />
+
+                    <include layout="@layout/medal_tally_row" />
+
+                    <include layout="@layout/medal_tally_row" />
+
+                    <include layout="@layout/medal_tally_row" />
+
+                    <include layout="@layout/medal_tally_row" />
 
                 </LinearLayout>
 
@@ -116,37 +143,76 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="8dp">
 
-                    <TextView
+                    <Button
                         android:layout_width="0dp"
-                        android:layout_height="24dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
+                        android:background="@drawable/view_background"
+                        android:backgroundTint="@color/colorAccent"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:gravity="center"
+                        android:padding="4dp"
                         android:text="@string/_2017"
-                        android:textColor="@color/colorAccent" />
+                        android:textColor="#FFFFFF" />
 
-                    <TextView
+                    <Button
                         android:layout_width="0dp"
-                        android:layout_height="24dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
+                        android:background="@drawable/view_background"
+                        android:backgroundTint="@color/colorAccent"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:gravity="center"
+                        android:padding="4dp"
                         android:text="@string/_2018"
-                        android:textColor="@color/colorAccent" />
+                        android:textColor="#FFFFFF" />
 
-                    <TextView
+                    <Button
                         android:layout_width="0dp"
-                        android:layout_height="24dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="8dp"
                         android:layout_weight="1"
+                        android:background="@drawable/view_background"
+                        android:backgroundTint="@color/colorAccent"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:gravity="center"
+                        android:padding="4dp"
                         android:text="@string/_2019"
-                        android:textColor="@color/colorAccent" />
+                        android:textColor="#FFFFFF" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:paddingBottom="4dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:text="@string/poll_message"
+            android:textColor="@color/primary_text"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light_italic"
+            android:paddingStart="16dp"
+            android:text="@string/responses_so_far"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp" />
+
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -161,35 +227,53 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary">
 
+
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/poll_chart"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp" />
+                    android:layout_height="400dp" />
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/vote_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
                     android:layout_alignParentBottom="true"
                     android:layout_below="@id/poll_chart"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorAccent"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:padding="4dp">
 
-                    <ImageView
-                        android:id="@+id/vote_icon"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_margin="4dp"
-                        android:src="@drawable/elections"
-                        android:tint="@color/colorAccent" />
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="4dp"
-                        android:layout_toRightOf="@id/vote_icon"
-                        android:text="Your Vote"
-                        android:textColor="@color/colorAccent" />
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:id="@+id/vote_icon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/elections"
+                            android:tint="#FFFFFF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="4dp"
+                            android:layout_toRightOf="@id/vote_icon"
+                            android:gravity="center_vertical"
+                            android:text="Your Vote"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
                 </RelativeLayout>
 
 
@@ -197,44 +281,20 @@
 
         </android.support.v7.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:background="@color/primary_text" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/feed"
-                android:textColor="@color/primary_text"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:background="@color/primary_text" />
-
-        </LinearLayout>
+            android:fontFamily="@font/roboto_light"
+            android:padding="16dp"
+            android:text="@string/latest_update"
+            android:textColor="@color/primary_text"
+            android:textSize="22sp" />
 
         <LinearLayout
             android:id="@+id/news_feed_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
     </LinearLayout>
