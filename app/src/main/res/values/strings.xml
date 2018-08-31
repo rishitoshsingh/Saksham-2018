@@ -120,4 +120,10 @@
     <string name="en">EN</string>
     <string name="ce_ei">CE / EI</string>
     <string name="mba_mca">MBA / MCA</string>
+    <string name="submit">Submit</string>
+    <string name="close">Close</string>
+    <string name="who_do_you_think_will_win">Who do you think will win?</string>
+    <string name="you_have_already_voted_in_this_poll">You have already voted in this Poll</string>
+    <string name="you_voted_for">You voted for :</string>
+    <string name="ok">OK</string>
 </resources>

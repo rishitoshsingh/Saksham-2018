@@ -25,8 +25,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.medals_tally_2015.*
 import android.R.attr.fragment
 import android.R.attr.key
-
-
+import com.bdcoe.saksham.Dialogs.PollDialog
 
 
 /**
@@ -80,7 +79,6 @@ class HomeFragment : Fragment() {
             val bundle = Bundle()
             bundle.putInt("year",2015)
             dialogFragment.arguments = bundle
-            ft.addToBackStack(null)
             dialogFragment.show(ft, "dialog")
         }
         show_2016.setOnClickListener {
@@ -89,7 +87,6 @@ class HomeFragment : Fragment() {
             val bundle = Bundle()
             bundle.putInt("year",2016)
             dialogFragment.arguments = bundle
-            ft.addToBackStack(null)
             dialogFragment.show(ft, "dialog")
         }
         show_2017.setOnClickListener {
@@ -98,7 +95,11 @@ class HomeFragment : Fragment() {
             val bundle = Bundle()
             bundle.putInt("year",2017)
             dialogFragment.arguments = bundle
-            ft.addToBackStack(null)
+            dialogFragment.show(ft, "dialog")
+        }
+        vote_button.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = PollDialog()
             dialogFragment.show(ft, "dialog")
         }
 
