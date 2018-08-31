@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="team_names">
+
+        <item>CS</item>
+        <item>IT</item>
+        <item>EC</item>
+        <item>ME</item>
+        <item>EN</item>
+        <item>CE / EI</item>
+        <item>MBA / MCA</item>
+
+    </string-array>
+
+</resources>
