@@ -147,6 +147,7 @@
                     android:padding="8dp">
 
                     <Button
+                        android:id="@+id/show_2017"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="8dp"
@@ -160,6 +161,7 @@
                         android:textColor="#FFFFFF" />
 
                     <Button
+                        android:id="@+id/show_2016"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="8dp"
@@ -170,10 +172,11 @@
                         android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="@string/_2018"
+                        android:text="@string/_2016"
                         android:textColor="#FFFFFF" />
 
                     <Button
+                        android:id="@+id/show_2015"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
                         android:layout_marginStart="8dp"
@@ -183,7 +186,7 @@
                         android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:gravity="center"
                         android:padding="4dp"
-                        android:text="@string/_2019"
+                        android:text="@string/_2015"
                         android:textColor="#FFFFFF" />
 
                 </LinearLayout>

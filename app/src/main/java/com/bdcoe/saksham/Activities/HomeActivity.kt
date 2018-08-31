@@ -2,6 +2,7 @@ package com.bdcoe.saksham.Activities
 
 import android.os.Build
 import android.os.Bundle
+import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation
@@ -11,6 +12,7 @@ import com.elmargomez.typer.Typer
 import android.view.WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
 import android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
 import com.bdcoe.saksham.Adapters.BottomBarAdapter
+import com.bdcoe.saksham.Dialogs.MedalTallyDialog
 import com.bdcoe.saksham.Fragments.*
 import com.bdcoe.saksham.R
 import com.elmargomez.typer.Font
@@ -41,8 +43,6 @@ class HomeActivity : AppCompatActivity() {
         val font = Typer.set(this).getFont(Font.ROBOTO_LIGHT)
         toolbar_layout.setCollapsedTitleTypeface(font)
         toolbar_layout.setExpandedTitleTypeface(font)
-
-
 
         initializeNavigationBar()
         initializeViewPager()
