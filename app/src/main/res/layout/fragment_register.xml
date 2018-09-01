@@ -1,19 +1,396 @@
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.bdcoe.saksham.Fragments.RegisterFragment">
+    android:background="@color/colorPrimary">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:scrollbars="none"
+        android:layout_height="match_parent">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Register" />
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_height="match_parent">
 
-    </LinearLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/etName"
+                android:inputType="text"
+                android:layout_margin="5dp"
+                android:hint="Name" />
 
-</android.support.v4.widget.NestedScrollView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/etSt_No"
+                android:layout_margin="5dp"
+                android:inputType="number"
+                android:hint="Student No" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Male"
+                    android:textColor="@drawable/radio_color" />
+
+                <RadioButton
+                    android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Female"
+                    android:textColor="@drawable/radio_color" />
+            </RadioGroup>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/etConatct"
+                android:layout_margin="5dp"
+                android:inputType="number"
+                android:hint="Contact No." />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="Branch:" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="5dp"
+                    android:entries="@array/branches"
+                    android:id="@+id/spBranches"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="Year:" />
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingBottom="5dp"
+                    android:entries="@array/year"
+                    android:id="@+id/spYear"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/hostler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Hostler"
+                    android:textColor="@drawable/radio_color" />
+
+                <RadioButton
+                    android:id="@+id/DayScholar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Day Scholar"
+                    android:textColor="@drawable/radio_color" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cricket"
+                        android:padding="5dp"
+                        android:id="@+id/cricket" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Football"
+                        android:id="@+id/football" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Volleyball"
+                        android:id="@+id/Volleyball" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Basketball"
+                        android:id="@+id/Basketball" />
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Highjump"
+                        android:id="@+id/Highjump" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Longjump"
+                        android:id="@+id/Longjump" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Badminton"
+                        android:textSize="13.7dp"
+                        android:id="@+id/Badminton" />
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Kabaddi"
+                        android:id="@+id/Javlin" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Pool"
+                        android:id="@+id/Pool" />
+
+
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chess"
+                        android:padding="5dp"
+                        android:id="@+id/chess" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Carrom"
+                        android:id="@+id/carrom" />
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TT"
+                        android:padding="5dp"
+                        android:id="@+id/tt" />
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Shotput"
+                        android:id="@+id/shotput" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Discus"
+                        android:id="@+id/discus" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Kho-Kho"
+                        android:id="@+id/martial" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Tug of war"
+                        android:id="@+id/tug" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power Lift"
+                        android:padding="5dp"
+                        android:id="@+id/power" />
+
+
+                </TableLayout>
+
+                <TableLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Hurdles"
+                        android:id="@+id/Hurdles" />
+
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Javelin"
+                        android:id="@+id/Javelin" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="100m"
+                        android:id="@+id/c100m" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="200m"
+                        android:id="@+id/c200m" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="400m"
+                        android:padding="5dp"
+                        android:id="@+id/c400m" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="800m"
+                        android:id="@+id/c800m" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="1500m"
+                        android:id="@+id/c1500m" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="4x100m"
+                        android:id="@+id/c4100m" />
+
+
+                </TableLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorAccent"
+                android:text="Register"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
