@@ -8,8 +8,8 @@
     <string name="read_more">Read More</string>
     <string name="medal_tally_2018">2018\'s Medal Tally</string>
     <string name="_2017">2017</string>
-    <string name="_2018">2018</string>
-    <string name="_2019">2019</string>
+    <string name="_2016">2016</string>
+    <string name="_2015">2015</string>
     <string name="feed">News Feed</string>
     <string name="home">Home</string>
     <string name="news">News</string>
@@ -108,30 +108,24 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="saksham">Saksham\'18</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="AboutSaksham">
+        Inter Departmental Sports Meet is back, and it promises to be bigger and more extravagant than ever! The annual intra college sports meet, spanning across several days commences  with the Opening Ceremony and would comprise competitive events across 12 disciplines namely Cricket, Football, Volleyball, Basketball, Tug of War, Athletics, Badminton, Chess, Carrom, Table Tennis, Pool, Kabaddi and Kho-Kho. The wide assortment of indoor and outdoor events that Sports Meet offers provides a huge platform for the students to showcase their talents in various sports and instils the message to rise above our limits and achieve the improbable. It includes the feeling of righteousness, prudence and brotherhood, and reinstates the fact that Ajay Kumar Garg Engineering College shapes up its students to achieve excellence in all spheres of life. So, the seven contingents CSE, EC, EN, ME, IT, CE+EI and MBA+MCA  are all ready in this rip-roaring competition to achieve the final victory. Are you?
+    </string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="poll_message">Who will be the Champion?</string>
     <string name="responses_so_far">Responses so far</string>
     <string name="latest_update">Latest Update</string>
-    <string name="AboutSaksham">
-        Inter Departmental Sports Meet is back, and it promises to be bigger and more extravagant than ever! The annual intra college sports meet, spanning across several days commences  with the Opening Ceremony and would comprise competitive events across 12 disciplines namely Cricket, Football, Volleyball, Basketball, Tug of War, Athletics, Badminton, Chess, Carrom, Table Tennis, Pool, Kabaddi and Kho-Kho. The wide assortment of indoor and outdoor events that Sports Meet offers provides a huge platform for the students to showcase their talents in various sports and instils the message to rise above our limits and achieve the improbable. It includes the feeling of righteousness, prudence and brotherhood, and reinstates the fact that Ajay Kumar Garg Engineering College shapes up its students to achieve excellence in all spheres of life. So, the seven contingents CSE, EC, EN, ME, IT, CE+EI and MBA+MCA  are all ready in this rip-roaring competition to achieve the final victory. Are you?
-    </string>
-    <string-array name="branches">
-        <item name="CS">CS</item>
-        <item name="IT">IT</item>
-        <item name="ME">ME</item>
-        <item name="EN">EN</item>
-        <item name="EC">EC</item>
-        <item name="EI">EI</item>
-        <item name="CE">CE</item>
-        <item name="MCA">MCA</item>
-    </string-array>
-
-    <string-array name="year">
-        <item name="1">1</item>
-        <item name="2">2</item>
-        <item name="3">3</item>
-        <item name="4">4</item>
-    </string-array>
+    <string name="cs">CS</string>
+    <string name="it">IT</string>
+    <string name="ec">EC</string>
+    <string name="me">ME</string>
+    <string name="en">EN</string>
+    <string name="ce_ei">CE / EI</string>
+    <string name="mba_mca">MBA / MCA</string>
+    <string name="submit">Submit</string>
+    <string name="close">Close</string>
+    <string name="who_do_you_think_will_win">Who do you think will win?</string>
+    <string name="you_have_already_voted_in_this_poll">You have already voted in this Poll</string>
+    <string name="you_voted_for">You voted for :</string>
+    <string name="ok">OK</string>
 </resources>

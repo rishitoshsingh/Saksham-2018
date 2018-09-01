@@ -28,13 +28,16 @@
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
-                app:titleTextColor="@color/primary_text"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextColor="@color/primary_text" />
+
 
         </android.support.design.widget.CollapsingToolbarLayout>
+
+
     </android.support.design.widget.AppBarLayout>
 
 
@@ -45,21 +48,21 @@
         <!--android:layout_height="match_parent"-->
         <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
 
+
         <com.bdcoe.saksham.Views.NoSwipePager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:background="#EFEFEF"/>
+            tools:background="#EFEFEF" />
 
 
     <!--</android.support.v4.widget.NestedScrollView>-->
-
 
     <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_dodgeInsetEdges="start"
-        android:layout_gravity="bottom" />
+        android:layout_gravity="bottom"
+        app:layout_dodgeInsetEdges="start" />
 </android.support.design.widget.CoordinatorLayout>

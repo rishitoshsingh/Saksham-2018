@@ -1,28 +1,31 @@
 package com.bdcoe.saksham.Fragments
 
 
+import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.TransitionDrawable
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bdcoe.saksham.Dialogs.MedalTallyDialog
 import com.bdcoe.saksham.R
 import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.components.Description
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.LegendEntry
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import com.github.mikephil.charting.interfaces.datasets.IPieDataSet
-import kotlinx.android.synthetic.main.fragment_home.*
 import com.github.mikephil.charting.formatter.PercentFormatter
-import android.R.attr.data
-import android.os.Build
-import com.elmargomez.typer.Typer
-import com.github.mikephil.charting.components.Description
-import com.github.mikephil.charting.components.Legend
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.medals_tally_2015.*
+import android.R.attr.fragment
+import android.R.attr.key
+import com.bdcoe.saksham.Dialogs.PollDialog
 
 
 /**
@@ -30,9 +33,9 @@ import com.github.mikephil.charting.components.Legend
  */
 class HomeFragment : Fragment() {
 
-    private lateinit var colorChangeHandler:Handler
-    private lateinit var  colorChangingRunnable:Runnable
-    private var fragmentRunning:Boolean = false
+    private lateinit var colorChangeHandler: Handler
+    private lateinit var colorChangingRunnable: Runnable
+    private var fragmentRunning: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -54,7 +57,7 @@ class HomeFragment : Fragment() {
         colorChangeHandler = Handler()
         colorChangingRunnable = object : Runnable {
             override fun run() {
-                if (fragmentRunning){
+                if (fragmentRunning) {
                     val color = arrayOf(gradients[previousPosition++], gradients[nextPosition++])
                     val trans = TransitionDrawable(color)
                     activity?.runOnUiThread {
@@ -68,6 +71,37 @@ class HomeFragment : Fragment() {
             }
         }
         colorChangeHandler.post(colorChangingRunnable)
+
+
+        show_2015.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = MedalTallyDialog()
+            val bundle = Bundle()
+            bundle.putInt("year",2015)
+            dialogFragment.arguments = bundle
+            dialogFragment.show(ft, "dialog")
+        }
+        show_2016.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = MedalTallyDialog()
+            val bundle = Bundle()
+            bundle.putInt("year",2016)
+            dialogFragment.arguments = bundle
+            dialogFragment.show(ft, "dialog")
+        }
+        show_2017.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = MedalTallyDialog()
+            val bundle = Bundle()
+            bundle.putInt("year",2017)
+            dialogFragment.arguments = bundle
+            dialogFragment.show(ft, "dialog")
+        }
+        vote_button.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = PollDialog()
+            dialogFragment.show(ft, "dialog")
+        }
 
     }
 

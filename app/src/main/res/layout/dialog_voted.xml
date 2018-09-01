@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/custom_dialog_background"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/you_have_already_voted_in_this_poll"
+        android:textColor="@color/primary_text"
+        android:textSize="28sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:fontFamily="@font/roboto_light_italic"
+                android:layout_width="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/secondary_text"
+                android:text="@string/you_voted_for"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                tools:text="CS"
+                android:id="@+id/voted_for"
+                android:textColor="@color/colorAccent"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/voted_for_close_button"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:textColor="@color/colorAccent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:focusable="true"
+            android:layout_alignParentEnd="true"
+            android:text="@string/ok"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
