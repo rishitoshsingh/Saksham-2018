@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingBottom="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/news_dialog_images_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
+            android:id="@+id/news_dialog_images_page_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="2dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/news_dialog_teams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light_italic"
+            android:paddingStart="16dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="13sp"
+            tools:text="CS vs ME" />
+
+        <TextView
+            android:id="@+id/news_dialog_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_light_italic"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:textColor="@color/secondary_text"
+            android:textSize="12sp"
+            tools:text="2 Days ago" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/news_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:textColor="@color/primary_text"
+        android:textSize="22sp"
+        tools:text="CS got the lead against ME" />
+
+    <TextView
+        android:id="@+id/news_dialog_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light_italic"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:textAlignment="center"
+        android:textColor="@color/secondary_text"
+        android:textSize="13sp"
+        tools:text="@string/large_text" />
+
+    <Button
+        android:layout_width="100dp"
+        android:id="@+id/news_dialog_close"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/pill_button"
+        android:fontFamily="@font/roboto_light"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:text="@string/close"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

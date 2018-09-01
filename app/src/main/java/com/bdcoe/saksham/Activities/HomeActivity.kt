@@ -53,19 +53,21 @@ class HomeActivity : AppCompatActivity() {
         view_pager.setPagingEnabled(false)
         val pagerAdapter = BottomBarAdapter(supportFragmentManager)
 
-        pagerAdapter.addFragments(HomeFragment())
         pagerAdapter.addFragments(NewsFragment())
         pagerAdapter.addFragments(ScheduleFragment())
+        pagerAdapter.addFragments(HomeFragment())
         pagerAdapter.addFragments(RegisterFragment())
         pagerAdapter.addFragments(AboutUsFragment())
+
         view_pager.adapter = pagerAdapter
+        view_pager.currentItem = 2
 
     }
 
     private fun initializeNavigationBar() {
-        val item0 = AHBottomNavigationItem(resources.getString(R.string.home), resources.getDrawable(R.drawable.home))
-        val item1 = AHBottomNavigationItem(resources.getString(R.string.news), resources.getDrawable(R.drawable.neews))
-        val item2 = AHBottomNavigationItem(resources.getString(R.string.schedule), resources.getDrawable(R.drawable.schedule))
+        val item0 = AHBottomNavigationItem(resources.getString(R.string.news), resources.getDrawable(R.drawable.neews))
+        val item1 = AHBottomNavigationItem(resources.getString(R.string.schedule), resources.getDrawable(R.drawable.schedule))
+        val item2 = AHBottomNavigationItem(resources.getString(R.string.home), resources.getDrawable(R.drawable.home))
         val item3 = AHBottomNavigationItem(resources.getString(R.string.register), resources.getDrawable(R.drawable.ic_person_add_black_24dp))
         val item4 = AHBottomNavigationItem(resources.getString(R.string.about_us), resources.getDrawable(R.drawable.ic_info_outline_black_48dp))
 
@@ -80,21 +82,22 @@ class HomeActivity : AppCompatActivity() {
         bottomNavigationBar.accentColor = resources.getColor(R.color.colorAccent)
         bottomNavigationBar.inactiveColor = resources.getColor(R.color.secondary_text)
         bottomNavigationBar.isBehaviorTranslationEnabled = true
+        bottomNavigationBar.currentItem = 2
 
         bottomNavigationBar.setOnTabSelectedListener { position, wasSelected ->
 
             if (!wasSelected)
                 view_pager.currentItem = position
             when (position){
-                0 -> toolbar_layout.title = resources.getString(R.string.saksham)
-                1 -> toolbar_layout.title = resources.getString(R.string.news)
-                2 -> toolbar_layout.title = resources.getString(R.string.schedule)
+                0 -> toolbar_layout.title = resources.getString(R.string.news)
+                1 -> toolbar_layout.title = resources.getString(R.string.schedule)
+                2 -> toolbar_layout.title = resources.getString(R.string.saksham)
                 3 -> toolbar_layout.title = resources.getString(R.string.register)
                 4 -> toolbar_layout.title = resources.getString(R.string.about_us)
             }
-
             return@setOnTabSelectedListener true
         }
+
 
     }
 }
