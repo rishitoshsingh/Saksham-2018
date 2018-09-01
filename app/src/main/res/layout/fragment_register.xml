@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:scrollbars="none"
-        android:layout_height="match_parent">
-
         <LinearLayout
+            android:paddingBottom="30dp"
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_marginTop="10dp"
@@ -19,6 +15,7 @@
             android:layout_height="match_parent">
 
             <EditText
+                android:fontFamily="@font/roboto_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
@@ -28,6 +25,7 @@
                 android:hint="Name" />
 
             <EditText
+                android:fontFamily="@font/roboto_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
@@ -44,6 +42,8 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_marginEnd="4dp"
                     android:id="@+id/male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -57,6 +57,8 @@
                     android:textColor="@drawable/radio_color" />
 
                 <RadioButton
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_marginStart="4dp"
                     android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,6 +72,7 @@
             </RadioGroup>
 
             <EditText
+                android:fontFamily="@font/roboto_light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
@@ -85,6 +88,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:fontFamily="@font/roboto_light"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
@@ -99,7 +103,7 @@
                     android:paddingTop="5dp"
                     android:paddingLeft="5dp"
                     android:paddingBottom="5dp"
-                    android:entries="@array/branches"
+                    android:entries="@array/team_names"
                     android:id="@+id/spBranches"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -111,6 +115,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:fontFamily="@font/roboto_light"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
@@ -138,6 +143,8 @@
                 android:orientation="horizontal">
 
                 <RadioButton
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_marginEnd="4dp"
                     android:id="@+id/hostler"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -151,6 +158,8 @@
                     android:textColor="@drawable/radio_color" />
 
                 <RadioButton
+                    android:fontFamily="@font/roboto_light"
+                    android:layout_marginStart="4dp"
                     android:id="@+id/DayScholar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -175,6 +184,7 @@
                     android:layout_height="wrap_content">
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Cricket"
@@ -182,6 +192,7 @@
                         android:id="@+id/cricket" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -189,6 +200,7 @@
                         android:id="@+id/football" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -196,6 +208,7 @@
                         android:id="@+id/Volleyball" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -204,6 +217,7 @@
 
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -211,6 +225,7 @@
                         android:id="@+id/Highjump" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -218,6 +233,7 @@
                         android:id="@+id/Longjump" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -227,6 +243,7 @@
 
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -234,6 +251,7 @@
                         android:id="@+id/Javlin" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -250,6 +268,7 @@
                     android:layout_height="wrap_content">
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Chess"
@@ -257,6 +276,7 @@
                         android:id="@+id/chess" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -265,6 +285,7 @@
 
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TT"
@@ -273,6 +294,7 @@
 
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -280,6 +302,7 @@
                         android:id="@+id/shotput" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -287,6 +310,7 @@
                         android:id="@+id/discus" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -294,6 +318,7 @@
                         android:id="@+id/martial" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -301,6 +326,7 @@
                         android:id="@+id/tug" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Power Lift"
@@ -318,6 +344,7 @@
 
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -326,6 +353,7 @@
 
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -333,6 +361,7 @@
                         android:id="@+id/Javelin" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -340,6 +369,7 @@
                         android:id="@+id/c100m" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -347,6 +377,7 @@
                         android:id="@+id/c200m" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="400m"
@@ -354,6 +385,7 @@
                         android:id="@+id/c400m" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -361,6 +393,7 @@
                         android:id="@+id/c800m" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -368,6 +401,7 @@
                         android:id="@+id/c1500m" />
 
                     <CheckBox
+                        android:fontFamily="@font/roboto_light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -379,18 +413,23 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/bRegister"
+                android:fontFamily="@font/roboto_light"
+                android:id="@+id/register_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_marginBottom="5dp"
-                android:background="@color/colorAccent"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/pill_button"
                 android:text="Register"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#fff" />
 
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary"/>
+
         </LinearLayout>
 
-    </ScrollView>
-
-</LinearLayout>
+</android.support.v4.widget.NestedScrollView>

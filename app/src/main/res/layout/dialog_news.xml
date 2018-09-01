@@ -14,8 +14,7 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/news_dialog_images_viewpager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:layout_height="match_parent"/>
 
         <com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
             android:id="@+id/news_dialog_images_page_indicator"
@@ -37,7 +36,7 @@
             android:fontFamily="@font/roboto_light_italic"
             android:paddingStart="16dp"
             android:textColor="@color/colorAccent"
-            android:textSize="16sp"
+            android:textSize="13sp"
             tools:text="CS vs ME" />
 
         <TextView

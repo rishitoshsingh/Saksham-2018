@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Parcelable
 import android.support.v4.view.PagerAdapter
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,11 +50,13 @@ class SlidingImageAdapter(private val mContext: Context, private val imagesUrls:
                 .listener(object : RequestListener<Drawable> {
                     override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
                         imageLayout.findViewById<ProgressBar>(R.id.backdropViewPagerProgressBar).visibility = View.GONE
+                        Log.i("ImageAdapter","Loaded")
                         return false
                     }
 
                     override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?, isFirstResource: Boolean): Boolean {
                         imageLayout.findViewById<ProgressBar>(R.id.backdropViewPagerProgressBar).visibility = View.GONE
+                        Log.i("ImageAdapter","Fail")
                         return false
                     }
                 })

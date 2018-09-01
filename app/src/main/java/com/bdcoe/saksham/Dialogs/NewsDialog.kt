@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.support.v4.view.ViewPager
 import android.support.v7.widget.AppCompatSpinner
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -75,7 +76,7 @@ class NewsDialog:DialogFragment() {
         mTitleTextView.text = mNewsTitle
         mDescriptionTextView.text = mNewsDescription
 
-        mImagesPager.adapter = context?.let { SlidingImageAdapter(it, mImages) }
+        mImagesPager.adapter = SlidingImageAdapter(this.activity!!, mImages)
         mImagePagerIndicator.attachToViewPager(mImagesPager)
 
     }

@@ -15,6 +15,9 @@
             android:layout_height="match_parent"
             android:text="News" />
 
+        <include layout="@layout/news_card"
+            android:id="@+id/news_template"/>
+
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

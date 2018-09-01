@@ -49,4 +49,8 @@
     <string name="you_have_already_voted_in_this_poll">You have already voted in this Poll</string>
     <string name="you_voted_for">You voted for :</string>
     <string name="ok">OK</string>
+    <string name="organising_committee">Organising Committee</string>
+    <string name="developer_team">Developer Team</string>
+    <string name="bdcoe_coordinators">BDCoE Coordinators</string>
+    <string name="media_team">Media Team</string>
 </resources>

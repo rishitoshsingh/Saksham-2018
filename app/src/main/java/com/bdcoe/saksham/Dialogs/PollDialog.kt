@@ -19,7 +19,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
 
     private lateinit var mSubmitButton: Button
     private lateinit var mCloseButton: Button
-    private lateinit var mSpinner: AppCompatSpinner
+    private lateinit var mSpinner: Spinner
     private var mSelected: Boolean = false
     private val mTeamNames = ArrayList<String>()
 
@@ -45,7 +45,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
         if (!voted) {
             mSubmitButton = view?.findViewById<Button>(R.id.vote_submit_button)!!
             mCloseButton = view.findViewById<Button>(R.id.vote_close_button)
-            mSpinner = view.findViewById<AppCompatSpinner>(R.id.poll_spinner)
+            mSpinner = view.findViewById<Spinner>(R.id.poll_spinner)
             mSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                     mSelected = false

@@ -23,7 +23,7 @@
         android:orientation="horizontal"
         android:padding="4dp">
 
-        <android.support.v7.widget.AppCompatSpinner
+        <Spinner
             android:layout_width="match_parent"
             android:entries="@array/team_names"
             android:id="@+id/poll_spinner"
