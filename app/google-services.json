@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1065185585313",
+    "firebase_url": "https://saksham-app.firebaseio.com",
+    "project_id": "saksham-app",
+    "storage_bucket": "saksham-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065185585313:android:22e7f3b9c2c6e470",
+        "android_client_info": {
+          "package_name": "com.bdcoe.saksham"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065185585313-lq0emsqcfm7emd3ck1egs61mke36j1eu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bdcoe.saksham",
+            "certificate_hash": "cc467f666f22210328b1a7e24ff026a887c9dfd3"
+          }
+        },
+        {
+          "client_id": "1065185585313-pu1ga02klqinpiie71p57rd89kui8ce0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChLrdgLP1IPd8GLDkLF6JirdJleE2UDj8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065185585313-pu1ga02klqinpiie71p57rd89kui8ce0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

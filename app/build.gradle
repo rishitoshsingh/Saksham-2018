@@ -4,6 +4,10 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'com.google.gms.google-services'
+
+//apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -12,6 +16,12 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+//        manifestPlaceholders = [
+//                onesignal_app_id : 'f940dfed-7f60-4583-be30-c3a8e8fd89a7',
+//                // Project number pulled from dashboard, local value is ignored.
+//                onesignal_google_project_number: '1065185585313'
+//        ]
+
 //        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -46,5 +56,11 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+    implementation 'com.google.firebase:firebase-core:12.0.1'
+//    implementation 'com.onesignal:OneSignal:[3.9.1, 3.99.99]'
 
 }
