@@ -28,26 +28,26 @@ class NewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        news_template.setOnClickListener {
-
-            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
-            val dialogFragment = NewsDialog()
-            val bundle = Bundle()
-
-            val images = ArrayList<String>()
-            images.add("285/one.jpg")
-            images.add("351/one.jpg")
-
-            bundle.putString("NewsTeams", "CS vs ME")
-            bundle.putString("NewsTitle", "Title")
-            bundle.putString("NewsDescription", resources.getString(R.string.large_text))
-            bundle.putString("Timestamp", "2 Days ago")
-            bundle.putStringArrayList("Images",images)
-
-            dialogFragment.arguments = bundle
-            dialogFragment.show(ft, "dialog")
-
-        }
+//        news_template.setOnClickListener {
+//
+//            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+//            val dialogFragment = NewsDialog()
+//            val bundle = Bundle()
+//
+//            val images = ArrayList<String>()
+//            images.add("285/one.jpg")
+//            images.add("351/one.jpg")
+//
+//            bundle.putString("NewsTeams", "CS vs ME")
+//            bundle.putString("NewsTitle", "Title")
+//            bundle.putString("NewsDescription", resources.getString(R.string.large_text))
+//            bundle.putString("Timestamp", "2 Days ago")
+//            bundle.putStringArrayList("Images",images)
+//
+//            dialogFragment.arguments = bundle
+//            dialogFragment.show(ft, "dialog")
+//
+//        }
 
 
     }
