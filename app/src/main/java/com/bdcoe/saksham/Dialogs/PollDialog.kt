@@ -1,9 +1,12 @@
 package com.bdcoe.saksham.Dialogs
 
+import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.AppCompatSpinner
 import android.view.LayoutInflater
 import android.view.View
@@ -31,20 +34,22 @@ class PollDialog : android.support.v4.app.DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(android.support.v4.app.DialogFragment.STYLE_NORMAL, R.style.MedalTallyDialogStyle)
+        setStyle(android.support.v4.app.DialogFragment.STYLE_NO_FRAME, R.style.MedalTallyDialogStyle)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         val sharedPreferences = context?.getSharedPreferences("Poll",Context.MODE_PRIVATE)
         val voted = sharedPreferences?.getBoolean("Voted",false)
         var layout = R.layout.dialog_vote
         if (voted!!) layout = R.layout.dialog_voted
 
-        val view = inflater.inflate(layout, container, false)
+        val inflater = LayoutInflater.from(activity)
+        val  view = inflater.inflate(layout, null)
+
         if (!voted) {
-            mSubmitButton = view?.findViewById<Button>(R.id.vote_submit_button)!!
-            mCloseButton = view.findViewById<Button>(R.id.vote_close_button)
+            mSubmitButton = view?.findViewById<Button>(R.id.poll_dialog_submit)!!
+            mCloseButton = view.findViewById<Button>(R.id.poll_dialog_close)
             mSpinner = view.findViewById<Spinner>(R.id.poll_spinner)
             mSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -91,7 +96,11 @@ class PollDialog : android.support.v4.app.DialogFragment() {
                 dialog.dismiss()
             }
         }
-        return view
-    }
 
+        return AlertDialog.Builder(this.activity!!)
+                .setView(view)
+                .setCancelable(true)
+                .create()
+
+    }
 }

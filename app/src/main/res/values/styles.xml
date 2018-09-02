@@ -28,6 +28,10 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
+
+        <!--<item name="button"-->
+        <item name="android:buttonTint">@color/colorAccent</item>
+
     </style>
 
 </resources>

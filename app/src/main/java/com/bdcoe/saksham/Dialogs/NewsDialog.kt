@@ -1,5 +1,7 @@
 package com.bdcoe.saksham.Dialogs
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.ClipDescription
 import android.content.Context
 import android.os.Bundle
@@ -16,6 +18,7 @@ import com.bdcoe.saksham.Adapters.SlidingImageAdapter
 import com.bdcoe.saksham.R
 import com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
 import org.w3c.dom.Text
+import java.util.zip.Inflater
 
 /**
  * Created by rishi on 1/9/18.
@@ -56,8 +59,10 @@ class NewsDialog:DialogFragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.dialog_news,container,false)
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+
+        val inflater = LayoutInflater.from(activity)
+        val view = inflater.inflate(R.layout.dialog_news,null)
         mImagesPager = view.findViewById<ViewPager>(R.id.news_dialog_images_viewpager)
         mImagePagerIndicator = view.findViewById<IndefinitePagerIndicator>(R.id.news_dialog_images_page_indicator)
         mTeamsTextView = view.findViewById<TextView>(R.id.news_dialog_teams)
@@ -65,20 +70,22 @@ class NewsDialog:DialogFragment() {
         mDescriptionTextView = view.findViewById<TextView>(R.id.news_dialog_description)
         mTimestampTextView = view.findViewById<TextView>(R.id.news_dialog_timestamp)
         mCloseButton = view.findViewById<Button>(R.id.news_dialog_close)
-        return view
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         mTeamsTextView.text = mTeams
         mTimestampTextView.text = mTimestamp
         mTitleTextView.text = mNewsTitle
         mDescriptionTextView.text = mNewsDescription
-
         mImagesPager.adapter = SlidingImageAdapter(this.activity!!, mImages)
         mImagePagerIndicator.attachToViewPager(mImagesPager)
+        mCloseButton.setOnClickListener {
+            dialog.dismiss()
+        }
 
+        return AlertDialog.Builder(this.activity!!)
+                .setView(view)
+                .setCancelable(true)
+                .create()
     }
 }
 

@@ -1,7 +1,9 @@
 package com.bdcoe.saksham.Dialogs
 
+import android.app.Dialog
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
+import android.support.v7.app.AlertDialog
 import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
@@ -34,22 +36,27 @@ class MedalTallyDialog : android.support.v4.app.DialogFragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
+        val inflater = LayoutInflater.from(activity)
         var layout:Int = R.layout.medals_tally_2015
         when (mYear){
             2015 -> layout = R.layout.medals_tally_2015
             2016-> layout = R.layout.medals_tally_2016
             2017 -> layout = R.layout.medals_tally_2017
-
         }
-        val view = inflater.inflate(layout, container, false)
+        val view = inflater.inflate(layout, null)
 
-        okButton = view?.findViewById<TextView>(R.id.ok_2015)!!
+        okButton = view?.findViewById<TextView>(R.id.medal_tally_dialog_ok)!!
         okButton.setOnClickListener {
             dialog.dismiss()
         }
-        return view
-    }
 
+        return AlertDialog.Builder(this.activity!!)
+                .setView(view)
+                .setCancelable(true)
+                .create()
+
+
+    }
 }

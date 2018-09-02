@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/custom_dialog_background"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -47,8 +46,9 @@
             android:id="@+id/voted_for_close_button"
             android:layout_width="100dp"
             android:layout_height="48dp"
-            android:textColor="@color/colorAccent"
-            android:background="?attr/selectableItemBackgroundBorderless"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:background="@drawable/pill_button"
             android:focusable="true"
             android:layout_alignParentEnd="true"
             android:text="@string/ok"/>
