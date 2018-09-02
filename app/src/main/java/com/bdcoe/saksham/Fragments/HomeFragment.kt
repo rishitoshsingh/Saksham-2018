@@ -1,7 +1,6 @@
 package com.bdcoe.saksham.Fragments
 
 
-import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.TransitionDrawable
 import android.os.Build
@@ -22,10 +21,18 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.medals_tally_2015.*
-import android.R.attr.fragment
-import android.R.attr.key
+import android.util.Log
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import com.bdcoe.saksham.Dialogs.PollDialog
+import com.bdcoe.saksham.Network.Clients.BdcoeClient
+import com.bdcoe.saksham.Network.ServiceGenerator
+import com.bdcoe.saksham.POJOs.Medals.MedalsResult
+import com.bdcoe.saksham.POJOs.Poll.PollResult
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 /**
@@ -36,6 +43,9 @@ class HomeFragment : Fragment() {
     private lateinit var colorChangeHandler: Handler
     private lateinit var colorChangingRunnable: Runnable
     private var fragmentRunning: Boolean = false
+    private lateinit var pieChart:PieChart
+
+    private lateinit var client:BdcoeClient
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -46,75 +56,29 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        client = ServiceGenerator.createBdcoeService(BdcoeClient::class.java)
 
-        val pieChart = view.findViewById<PieChart>(R.id.poll_chart)
-        initializePollChart(pieChart)
+        loadMedalTally()
+        loadPolls()
 
-
-        val gradients = arrayOf(resources.getDrawable(R.drawable.pacific_dream), resources.getDrawable(R.drawable.venice), resources.getDrawable(R.drawable.can_you_feel_the_love_tonight), resources.getDrawable(R.drawable.the_blue_lagoon))
-        var nextPosition = 1
-        var previousPosition = 0
-        colorChangeHandler = Handler()
-        colorChangingRunnable = object : Runnable {
-            override fun run() {
-                if (fragmentRunning) {
-                    val color = arrayOf(gradients[previousPosition++], gradients[nextPosition++])
-                    val trans = TransitionDrawable(color)
-                    activity?.runOnUiThread {
-                        header_background.background = trans
-                        trans.startTransition(3000)
-                    }
-                    if (nextPosition == 3) nextPosition = 0
-                    if (previousPosition == 3) previousPosition = 0
-                    colorChangeHandler.postDelayed(this, 3000)
-                }
-            }
-        }
-        colorChangeHandler.post(colorChangingRunnable)
+        pieChart = view.findViewById<PieChart>(R.id.poll_chart)
+//        initializePollChart(pieChart)
+        initializeHeaderAnimation()
+        initializeClickListners()
 
 
-        show_2015.setOnClickListener {
-            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
-            val dialogFragment = MedalTallyDialog()
-            val bundle = Bundle()
-            bundle.putInt("year",2015)
-            dialogFragment.arguments = bundle
-            dialogFragment.show(ft, "dialog")
-        }
-        show_2016.setOnClickListener {
-            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
-            val dialogFragment = MedalTallyDialog()
-            val bundle = Bundle()
-            bundle.putInt("year",2016)
-            dialogFragment.arguments = bundle
-            dialogFragment.show(ft, "dialog")
-        }
-        show_2017.setOnClickListener {
-            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
-            val dialogFragment = MedalTallyDialog()
-            val bundle = Bundle()
-            bundle.putInt("year",2017)
-            dialogFragment.arguments = bundle
-            dialogFragment.show(ft, "dialog")
-        }
-        vote_button.setOnClickListener {
-            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
-            val dialogFragment = PollDialog()
-            dialogFragment.show(ft, "dialog")
-        }
+
+
 
     }
 
-    private fun initializePollChart(pieChart: PieChart) {
+    private fun initializePollChart(pieChart: PieChart,pollsArray:ArrayList<Float>) {
 
+        var i = 0
         val entries = mutableListOf<PieEntry>()
-        entries.add(PieEntry(4f, 0))
-        entries.add(PieEntry(8f, 1))
-        entries.add(PieEntry(6f, 2))
-        entries.add(PieEntry(12f, 3))
-        entries.add(PieEntry(18f, 4))
-        entries.add(PieEntry(9f, 5))
-        entries.add(PieEntry(9f, 5))
+        pollsArray.forEach {
+            entries.add(PieEntry(it, i++))
+        }
         val dataSet = PieDataSet(entries, "Win Poll")
 
         val labels = ArrayList<String>()
@@ -165,6 +129,130 @@ class HomeFragment : Fragment() {
         data.setValueTextColor(Color.WHITE)
 
     }
+
+    private fun initializeHeaderAnimation() {
+        val gradients = arrayOf(resources.getDrawable(R.drawable.pacific_dream), resources.getDrawable(R.drawable.venice), resources.getDrawable(R.drawable.can_you_feel_the_love_tonight), resources.getDrawable(R.drawable.the_blue_lagoon))
+        var nextPosition = 1
+        var previousPosition = 0
+        colorChangeHandler = Handler()
+        colorChangingRunnable = object : Runnable {
+            override fun run() {
+                if (fragmentRunning) {
+                    val color = arrayOf(gradients[previousPosition++], gradients[nextPosition++])
+                    val trans = TransitionDrawable(color)
+                    activity?.runOnUiThread {
+                        header_background.background = trans
+                        trans.startTransition(3000)
+                    }
+                    if (nextPosition == 3) nextPosition = 0
+                    if (previousPosition == 3) previousPosition = 0
+                    colorChangeHandler.postDelayed(this, 3000)
+                }
+            }
+        }
+        colorChangeHandler.post(colorChangingRunnable)
+    }
+
+    private fun initializeClickListners() {
+        show_2015.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = MedalTallyDialog()
+            val bundle = Bundle()
+            bundle.putInt("year",2015)
+            dialogFragment.arguments = bundle
+            dialogFragment.show(ft, "dialog")
+        }
+        show_2016.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = MedalTallyDialog()
+            val bundle = Bundle()
+            bundle.putInt("year",2016)
+            dialogFragment.arguments = bundle
+            dialogFragment.show(ft, "dialog")
+        }
+        show_2017.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = MedalTallyDialog()
+            val bundle = Bundle()
+            bundle.putInt("year",2017)
+            dialogFragment.arguments = bundle
+            dialogFragment.show(ft, "dialog")
+        }
+        vote_button.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = PollDialog()
+            dialogFragment.show(ft, "dialog")
+        }
+    }
+
+
+    private fun loadMedalTally() {
+        val call = callMedals()
+        call.enqueue(object : Callback<MedalsResult>{
+            override fun onFailure(call: Call<MedalsResult>?, t: Throwable?) {
+                Toast.makeText(context, "Medals Load Failed", Toast.LENGTH_SHORT).show()
+            }
+            override fun onResponse(call: Call<MedalsResult>?, response: Response<MedalsResult>?) {
+                val medalsData = response?.body()
+                if (medalsData != null && medalsData.result.toInt() == 1) {
+                    populateMedalsInTable(medalsData?.list)
+                } else Toast.makeText(context,"No Data Found",Toast.LENGTH_SHORT).show()
+            }
+
+            private fun populateMedalsInTable(list: List<com.bdcoe.saksham.POJOs.Medals.List>?) {
+                medal_row_placeholder.visibility = View.GONE
+                list?.forEach {
+                    val inflater = LayoutInflater.from(context)
+                    val view = inflater.inflate(R.layout.medal_tally_row,null)
+                    val teamTextView = view.findViewById<TextView>(R.id.row_team)
+                    val goldTextView = view.findViewById<TextView>(R.id.row_gold)
+                    val silverTextView = view.findViewById<TextView>(R.id.row_silver)
+                    val bronzeTextView = view.findViewById<TextView>(R.id.row_bronze)
+                    val totalTextView = view.findViewById<TextView>(R.id.row_total)
+
+                    teamTextView.text = it.branch
+                    goldTextView.text = it.gold
+                    silverTextView.text = it.silver
+                    bronzeTextView.text = it.bronze
+                    totalTextView.text = it.total
+
+                    medal_tally_linear_root.addView(view)
+                }
+
+            }
+
+        })
+    }
+
+    private fun loadPolls() {
+        val call = callPolls()
+        call.enqueue(object : Callback<PollResult>{
+            override fun onFailure(call: Call<PollResult>?, t: Throwable?) {
+                Toast.makeText(context, "Polls Load Failed", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<PollResult>?, response: Response<PollResult>?) {
+                val data = response?.body()
+                val pollsArray = ArrayList<Float>()
+                if (data?.result?.toInt() == 1){
+                    pollsArray.add(data.list[0].cs.toFloat())
+                    pollsArray.add(data.list[0].it.toFloat())
+                    pollsArray.add(data.list[0].ec.toFloat())
+                    pollsArray.add(data.list[0].me.toFloat())
+                    pollsArray.add(data.list[0].en.toFloat())
+                    pollsArray.add(data.list[0].ceei.toFloat())
+                    pollsArray.add(data.list[0].mca.toFloat())
+                }
+                initializePollChart(pieChart,pollsArray)
+                total_responses.text = data?.list!![0].total.toString() + "Responses so far"
+            }
+        })
+
+    }
+
+    private fun callMedals(): Call<MedalsResult> = client.getMedalas("3")
+    private fun callPolls(): Call<PollResult> = client.getPolls("3")
+
 
     override fun onPause() {
         super.onPause()
