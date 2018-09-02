@@ -97,7 +97,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="12"
             android:textColor="@color/secondary_text" />
 
         <TextView
@@ -106,7 +106,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="8"
             android:textColor="@color/secondary_text"
             android:textSize="16sp" />
 
@@ -116,7 +116,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="4"
             android:textColor="@color/secondary_text"
             android:textSize="16sp" />
 
@@ -126,12 +126,71 @@
             android:layout_weight="2"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="92"
             android:textColor="@color/colorAccent"
             android:textSize="16sp"
             android:textStyle="bold" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="@string/me"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="@color/secondary_text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="87"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -155,7 +214,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="10"
             android:textColor="@color/secondary_text" />
 
         <TextView
@@ -164,7 +223,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="6"
             android:textColor="@color/secondary_text"
             android:textSize="16sp" />
 
@@ -184,7 +243,65 @@
             android:layout_weight="2"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="69"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="@string/en"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/secondary_text" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/secondary_text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:text="63"
             android:textColor="@color/colorAccent"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -214,7 +331,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="6"
             android:textColor="@color/secondary_text" />
 
         <TextView
@@ -223,7 +340,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="9"
             android:textColor="@color/secondary_text"
             android:textSize="16sp" />
 
@@ -233,7 +350,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="6"
             android:textColor="@color/secondary_text"
             android:textSize="16sp" />
 
@@ -243,124 +360,7 @@
             android:layout_weight="2"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:background="@color/colorPrimary"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="@string/me"
-            android:textColor="@color/secondary_text"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="2"
-            android:textColor="@color/secondary_text" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="2"
-            android:textColor="@color/secondary_text"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="2"
-            android:textColor="@color/secondary_text"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="2"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:background="@color/colorPrimary"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="@string/en"
-            android:textColor="@color/secondary_text"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="2"
-            android:textColor="@color/secondary_text" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="2"
-            android:textColor="@color/secondary_text"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="2"
-            android:textColor="@color/secondary_text"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:fontFamily="@font/roboto_light"
-            android:gravity="center"
-            android:text="2"
+            android:text="59"
             android:textColor="@color/colorAccent"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -389,7 +389,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="7"
             android:textColor="@color/secondary_text" />
 
         <TextView
@@ -398,7 +398,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="5"
             android:textColor="@color/secondary_text"
             android:textSize="16sp" />
 
@@ -418,7 +418,7 @@
             android:layout_weight="2"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="51"
             android:textColor="@color/colorAccent"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -448,7 +448,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="1"
             android:textColor="@color/secondary_text" />
 
         <TextView
@@ -457,7 +457,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="0"
             android:textColor="@color/secondary_text"
             android:textSize="16sp" />
 
@@ -467,7 +467,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="4"
             android:textColor="@color/secondary_text"
             android:textSize="16sp" />
 
@@ -477,7 +477,7 @@
             android:layout_weight="2"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:text="2"
+            android:text="7"
             android:textColor="@color/colorAccent"
             android:textSize="16sp"
             android:textStyle="bold" />
