@@ -14,17 +14,29 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:elevation="4dp"
+            android:focusableInTouchMode="true"
             app:shape_arc_cropDirection="outside"
             app:shape_arc_height="20dp"
             app:shape_arc_position="bottom">
 
-            <LinearLayout
-                android:id="@+id/header_background"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:orientation="vertical" />
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/header_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/header_placeholder" />
+
+            </RelativeLayout>
 
         </com.github.florent37.shapeofview.shapes.ArcView>
 
@@ -44,7 +56,7 @@
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp"
+            app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -79,11 +91,11 @@
                         android:padding="4dp">
 
                         <TextView
-                            android:fontFamily="@font/roboto_light"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:layout_weight="3"
+                            android:fontFamily="@font/roboto_light"
                             android:gravity="center"
                             android:text="@string/team"
                             android:textColor="@color/primary_text"
@@ -114,30 +126,43 @@
                             android:src="@drawable/bronze_medal" />
 
                         <TextView
-                            android:fontFamily="@font/roboto_light"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="2"
+                            android:fontFamily="@font/roboto_light"
                             android:gravity="center"
                             android:text="@string/total"
                             android:textColor="@color/primary_text"
                             android:textSize="18sp" />
                     </LinearLayout>
 
-                    <include layout="@layout/medal_tally_row" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/secondary_text" />
 
-                    <include layout="@layout/medal_tally_row" />
+                    <LinearLayout
+                        android:id="@+id/medal_row_placeholder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                    <include layout="@layout/medal_tally_row" />
+                        <include layout="@layout/medal_tally_row" />
 
-                    <include layout="@layout/medal_tally_row" />
+                        <include layout="@layout/medal_tally_row" />
 
-                    <include layout="@layout/medal_tally_row" />
+                        <include layout="@layout/medal_tally_row" />
 
-                    <include layout="@layout/medal_tally_row" />
+                        <include layout="@layout/medal_tally_row" />
 
-                    <include layout="@layout/medal_tally_row" />
+                        <include layout="@layout/medal_tally_row" />
+
+                        <include layout="@layout/medal_tally_row" />
+
+                        <include layout="@layout/medal_tally_row" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -149,14 +174,14 @@
                     android:padding="8dp">
 
                     <Button
-                        android:fontFamily="@font/roboto_light"
                         android:id="@+id/show_2017"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="1"
-                        android:background="@drawable/view_background"
+                        android:background="@drawable/pill_button"
                         android:backgroundTint="@color/colorAccent"
+                        android:fontFamily="@font/roboto_light"
                         android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:gravity="center"
                         android:padding="4dp"
@@ -164,15 +189,15 @@
                         android:textColor="#FFFFFF" />
 
                     <Button
-                        android:fontFamily="@font/roboto_light"
                         android:id="@+id/show_2016"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_weight="1"
-                        android:background="@drawable/view_background"
+                        android:background="@drawable/pill_button"
                         android:backgroundTint="@color/colorAccent"
+                        android:fontFamily="@font/roboto_light"
                         android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:gravity="center"
                         android:padding="4dp"
@@ -180,14 +205,14 @@
                         android:textColor="#FFFFFF" />
 
                     <Button
-                        android:fontFamily="@font/roboto_light"
                         android:id="@+id/show_2015"
                         android:layout_width="0dp"
                         android:layout_height="48dp"
                         android:layout_marginStart="8dp"
                         android:layout_weight="1"
-                        android:background="@drawable/view_background"
+                        android:background="@drawable/pill_button"
                         android:backgroundTint="@color/colorAccent"
+                        android:fontFamily="@font/roboto_light"
                         android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:gravity="center"
                         android:padding="4dp"
@@ -213,6 +238,7 @@
             android:textSize="22sp" />
 
         <TextView
+            android:id="@+id/total_responses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light_italic"
@@ -227,7 +253,7 @@
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp"
+            app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
 
             <RelativeLayout
@@ -270,11 +296,11 @@
                             android:tint="#FFFFFF" />
 
                         <TextView
-                            android:fontFamily="@font/roboto_light"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_margin="4dp"
                             android:layout_toEndOf="@id/vote_icon"
+                            android:fontFamily="@font/roboto_light"
                             android:gravity="center_vertical"
                             android:text="@string/vote_now"
                             android:textColor="#FFFFFF"

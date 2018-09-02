@@ -4,7 +4,8 @@ import com.bdcoe.saksham.POJOs.Medals.MedalsResult
 import com.bdcoe.saksham.POJOs.News.NewsResult
 import com.bdcoe.saksham.POJOs.Poll.PollResult
 import retrofit2.Call
-import retrofit2.http.Body
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
 /**
@@ -13,12 +14,21 @@ import retrofit2.http.POST
 interface BdcoeClient {
 
     @POST("medals.php")
-    fun getMedalas(@Body dataflow: Int): Call<MedalsResult>
+    @FormUrlEncoded
+    fun getMedalas(@Field("dataflow") datadlow:String ): Call<MedalsResult>
 
     @POST("news.php")
-    fun getNews(@Body dataflow: Int): Call<NewsResult>
+    @FormUrlEncoded
+    fun getNews(@Field("dataflow") dataflow: String): Call<NewsResult>
 
     @POST("poll.php")
-    fun getPolls(@Body dataflow: Int): Call<PollResult>
+    @FormUrlEncoded
+    fun postPolls(@Field("dataflow") dataflow: String): Call<PollResult>
+
+
+    @POST("getpoll.php")
+    @FormUrlEncoded
+    fun getPolls(@Field("id") id: String): Call<PollResult>
+
 
 }
