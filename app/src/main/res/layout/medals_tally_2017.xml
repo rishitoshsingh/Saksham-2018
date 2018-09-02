@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/custom_dialog_background"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
     android:padding="4dp">
@@ -19,7 +18,7 @@
         android:padding="2dp"
         android:text="2017"
         android:textColor="@color/colorAccent"
-        android:textSize="22sp" />
+        android:textSize="26sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -485,17 +484,20 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/ok_2015"
+    <Button
+        android:layout_margin="8dp"
+        android:id="@+id/medal_tally_dialog_ok"
         android:layout_width="100dp"
-        android:gravity="center"
         android:layout_height="48dp"
-        android:layout_gravity="end"
-        android:background="@drawable/view_background"
+        android:layout_gravity="center"
+        android:background="@drawable/pill_button"
+        android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/roboto_light"
         android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:gravity="center"
         android:text="OK"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp" />
 
 
