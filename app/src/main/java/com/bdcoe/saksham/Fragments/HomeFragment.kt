@@ -244,14 +244,14 @@ class HomeFragment : Fragment() {
                     pollsArray.add(data.list[0].mca.toFloat())
                 }
                 initializePollChart(pieChart,pollsArray)
-                total_responses.text = data?.list!![0].total.toString() + "Responses so far"
+                total_responses.text = data?.list!![0].total.toString() + " Responses so far"
             }
         })
 
     }
 
     private fun callMedals(): Call<MedalsResult> = client.getMedalas("3")
-    private fun callPolls(): Call<PollResult> = client.getPolls("3")
+    private fun callPolls(): Call<PollResult> = client.getPolls("0")
 
 
     override fun onPause() {

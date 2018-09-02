@@ -23,6 +23,12 @@ interface BdcoeClient {
 
     @POST("poll.php")
     @FormUrlEncoded
-    fun getPolls(@Field("dataflow") dataflow: String): Call<PollResult>
+    fun postPolls(@Field("dataflow") dataflow: String): Call<PollResult>
+
+
+    @POST("getpoll.php")
+    @FormUrlEncoded
+    fun getPolls(@Field("id") id: String): Call<PollResult>
+
 
 }
