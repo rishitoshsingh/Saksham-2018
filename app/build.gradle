@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'com.google.gms.google-services'
 
-//apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
 android {
     compileSdkVersion 27
@@ -16,11 +16,11 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-//        manifestPlaceholders = [
-//                onesignal_app_id : 'f940dfed-7f60-4583-be30-c3a8e8fd89a7',
-//                // Project number pulled from dashboard, local value is ignored.
-//                onesignal_google_project_number: '1065185585313'
-//        ]
+        manifestPlaceholders = [
+                onesignal_app_id : 'f940dfed-7f60-4583-be30-c3a8e8fd89a7',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: '1065185585313'
+        ]
 
 //        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -48,9 +48,7 @@ dependencies {
     implementation 'com.github.florent37:shapeofview:1.3.2'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     implementation 'com.elmargomez.typer:typerlib:1.0.0'
-    //    testImplementation 'junit:junit:4.12'
-    //    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.ryanjeffreybrooks:indefinitepagerindicator:1.0.9'
 
@@ -63,7 +61,7 @@ dependencies {
     implementation 'com.github.marlonlom:timeago:4.0.1'
 
     implementation 'com.google.firebase:firebase-core:12.0.1'
-//    implementation 'com.onesignal:OneSignal:[3.9.1, 3.99.99]'
+    implementation 'com.onesignal:OneSignal:[3.9.1, 3.99.99]'
 
 
 }
