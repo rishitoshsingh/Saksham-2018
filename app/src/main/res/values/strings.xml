@@ -42,7 +42,7 @@
     <string name="me">ME</string>
     <string name="en">EN</string>
     <string name="ce_ei">CE / EI</string>
-    <string name="mba_mca">MBA / MCA</string>
+    <string name="mba_mca">MCA / MBA</string>
     <string name="submit">Submit</string>
     <string name="close">Close</string>
     <string name="who_do_you_think_will_win">Who do you think will win?</string>
@@ -68,6 +68,7 @@
     <string name="kho_kho">Kho Kho</string>
     <string name="kabaddi">Kabaddi</string>
     <string name="pool">Pool</string>
-    <string name="hurdles">Hurdles</string>
+    <string name="obstacle_race">Obstacle Race</string>
     <string name="no_data_found">No Data Found</string>
+    <string name="tug_of_war">Tug of War</string>
 </resources>
