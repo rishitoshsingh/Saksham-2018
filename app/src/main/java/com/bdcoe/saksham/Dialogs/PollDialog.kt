@@ -2,6 +2,7 @@ package com.bdcoe.saksham.Dialogs
 
 import android.app.Dialog
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -74,24 +75,8 @@ class PollDialog : android.support.v4.app.DialogFragment() {
             mSubmitButton.isEnabled = false
 
             mSubmitButton.setOnClickListener {
-
-                val editor = sharedPreferences.edit()
-                editor.putBoolean("Voted", true)
-                editor.putString("VotedFor", mSpinner.selectedItem.toString())
-                editor.commit()
-
-
-                postPollRequest(mSpinner.selectedItem.toString())
-
-//                if (mSelected) {
-//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//                        Toast.makeText(this.context, mSpinner.selectedItem.toString(), Toast.LENGTH_LONG).show()
-//                    }
-//                }
-                dialog.dismiss()
-
+                postPollRequest(mSpinner.selectedItem.toString(),sharedPreferences)
             }
-
             mCloseButton.setOnClickListener {
                 dialog.dismiss()
             }
@@ -112,7 +97,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
 
     }
 
-    private fun postPollRequest(branch: String) {
+    private fun postPollRequest(branch: String, sharedPreferences:SharedPreferences) {
 
         var dataflow: Int = 0
         when (branch) {
@@ -128,9 +113,16 @@ class PollDialog : android.support.v4.app.DialogFragment() {
         call.enqueue(object : Callback<PollResult>{
             override fun onFailure(call: Call<PollResult>?, t: Throwable?) {
                 Toast.makeText(context, "Polls Submit Failed", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
             }
             override fun onResponse(call: Call<PollResult>?, response: Response<PollResult>?) {
-//                Toast.makeText(context, "Polls Submited, Restart App to see updates.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Polls Submited.", Toast.LENGTH_SHORT).show()
+                val editor = sharedPreferences.edit()
+                editor.putBoolean("Voted", true)
+                editor.putString("VotedFor", mSpinner.selectedItem.toString())
+                editor.commit()
+                dialog.dismiss()
+
             }
         })
 
