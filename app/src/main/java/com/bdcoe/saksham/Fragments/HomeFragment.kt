@@ -1,6 +1,7 @@
 package com.bdcoe.saksham.Fragments
 
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.TransitionDrawable
 import android.os.Build
@@ -56,6 +57,9 @@ class HomeFragment : Fragment() {
     private lateinit var viewAdapter: NewsAdapter
     private lateinit var viewManager: LinearLayoutManager
 
+    private val POLL_DIALOG_REQUEST_CODE:Int = 90
+    private val POLL_SUBMITTED_CODE:Int = 1
+    private val POLL_NOT_SUBMITTED_CODE:Int = 0
 
     private lateinit var client: BdcoeClient
 
@@ -233,12 +237,22 @@ class HomeFragment : Fragment() {
         vote_button.setOnClickListener {
             val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
             val dialogFragment = PollDialog()
-
-
+            dialogFragment.setTargetFragment(this, POLL_DIALOG_REQUEST_CODE)
             dialogFragment.show(ft, "dialog")
 
 
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == POLL_DIALOG_REQUEST_CODE){
+            if (resultCode == POLL_SUBMITTED_CODE){
+                loadPolls()
+            }
+        }
+
     }
 
     private fun loadMedalTally() {
@@ -254,8 +268,8 @@ class HomeFragment : Fragment() {
                     if (medalsData != null && medalsData.result.toInt() == 1) {
                         populateMedalsInTable(medalsData?.list)
                     } else Toast.makeText(context, "No Data Found", Toast.LENGTH_SHORT).show()
-                } catch (ex:Exception){
-                    Log.d("MedalLoadFailed",ex.toString())
+                } catch (ex: Exception) {
+                    Log.d("MedalLoadFailed", ex.toString())
                 }
             }
 
@@ -292,23 +306,23 @@ class HomeFragment : Fragment() {
             }
 
             override fun onResponse(call: Call<PollResult>?, response: Response<PollResult>?) {
-               try {
-                   val data = response?.body()
-                   val pollsArray = ArrayList<Float>()
-                   if (data?.result?.toInt() == 1) {
-                       pollsArray.add(data.list[0].cs.toFloat())
-                       pollsArray.add(data.list[0].it.toFloat())
-                       pollsArray.add(data.list[0].ec.toFloat())
-                       pollsArray.add(data.list[0].me.toFloat())
-                       pollsArray.add(data.list[0].en.toFloat())
-                       pollsArray.add(data.list[0].ceei.toFloat())
-                       pollsArray.add(data.list[0].mca.toFloat())
-                   }
-                   initializePollChart(pieChart, pollsArray)
-                   total_responses.text = data?.list!![0].total.toString() + " Responses so far"
-               }catch (ex:Exception){
-                   Log.d("PollsLoadError",ex.toString())
-               }
+                try {
+                    val data = response?.body()
+                    val pollsArray = ArrayList<Float>()
+                    if (data?.result?.toInt() == 1) {
+                        pollsArray.add(data.list[0].cs.toFloat())
+                        pollsArray.add(data.list[0].it.toFloat())
+                        pollsArray.add(data.list[0].ec.toFloat())
+                        pollsArray.add(data.list[0].me.toFloat())
+                        pollsArray.add(data.list[0].en.toFloat())
+                        pollsArray.add(data.list[0].ceei.toFloat())
+                        pollsArray.add(data.list[0].mca.toFloat())
+                    }
+                    initializePollChart(pieChart, pollsArray)
+                    total_responses.text = data?.list!![0].total.toString() + " Responses so far"
+                } catch (ex: Exception) {
+                    Log.d("PollsLoadError", ex.toString())
+                }
             }
         })
 
@@ -337,8 +351,8 @@ class HomeFragment : Fragment() {
                     } else {
                         Toast.makeText(context, "Latest News Load Failed", Toast.LENGTH_SHORT).show()
                     }
-                } catch (ex:Exception){
-                    Log.d("NewsLoad",ex.toString())
+                } catch (ex: Exception) {
+                    Log.d("NewsLoad", ex.toString())
                 }
 
             }
