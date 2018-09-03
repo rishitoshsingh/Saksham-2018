@@ -677,7 +677,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light_italic"
-                            android:text="Designer"
+                            android:text="Developer"
                             android:textColor="@color/primary_text"
                             android:textSize="13sp" />
 

@@ -102,6 +102,7 @@ class NewsFragment : Fragment() {
             }
 
             override fun onResponse(call: Call<NewsResult>?, response: Response<NewsResult>?) {
+                newsList.removeAll(newsList)
                 if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
                 val data = response?.body()
                 data?.list?.forEach {

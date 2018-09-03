@@ -324,8 +324,8 @@
             android:textColor="@color/primary_text"
             android:textSize="22sp" />
 
-        <LinearLayout
-            android:id="@+id/news_feed_layout"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/latest_news_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
