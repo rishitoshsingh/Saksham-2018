@@ -200,7 +200,7 @@ class HomeFragment : Fragment() {
             }
 
             private fun populateMedalsInTable(list: List<com.bdcoe.saksham.POJOs.Medals.List>?) {
-                medal_row_placeholder.visibility = View.GONE
+                if(medal_row_placeholder != null)   medal_row_placeholder.visibility = View.GONE
                 list?.forEach {
                     val inflater = LayoutInflater.from(context)
                     val view = inflater.inflate(R.layout.medal_tally_row,null)

@@ -27,7 +27,7 @@ import com.bdcoe.saksham.R
 class SlidingImageAdapter(private val mContext: Context, private val imagesUrls: ArrayList<String>) : PagerAdapter() {
 
     private val inflater: LayoutInflater = LayoutInflater.from(mContext)
-    private val IMAGE_BASE_URL = "http://saksham2015.pe.hu/uploads/"
+    private val IMAGE_BASE_URL = "http://saksham2015.pe.hu/"
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         container.removeView(`object` as View)
@@ -61,7 +61,7 @@ class SlidingImageAdapter(private val mContext: Context, private val imagesUrls:
                     }
                 })
                 .apply(RequestOptions()
-                        .error(R.drawable.header)
+                        .error(R.drawable.header_placeholder)
                         .centerCrop()
                         .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC))
                 .into(imageView)
