@@ -64,8 +64,8 @@ class ScheduleFragment : Fragment() {
             mSports = "Chess"
             showDialog()
         }
-        handball_schedule.setOnClickListener {
-            mSports = "Handball"
+        tug_of_war_schedule.setOnClickListener {
+            mSports = "Tug of War"
             showDialog()
         }
         kabaddi_schedule.setOnClickListener {
@@ -84,8 +84,8 @@ class ScheduleFragment : Fragment() {
             mSports = "Volleyball"
             showDialog()
         }
-        hurdles_schedule.setOnClickListener {
-            mSports = "Hurdles"
+        obstacle_race_schedule.setOnClickListener {
+            mSports = "Obstucle Race"
             showDialog()
         }
     }

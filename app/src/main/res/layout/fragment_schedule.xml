@@ -268,7 +268,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/handball_schedule"
+                android:id="@+id/tug_of_war_schedule"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -278,14 +278,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/handball"/>
+                    android:src="@drawable/tug_of_war"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_light"
                     android:gravity="center"
-                    android:text="@string/handball"
+                    android:text="@string/tug_of_war"
                     android:textColor="@color/primary_text" />
 
             </LinearLayout>
@@ -367,7 +367,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/hurdles_schedule"
+                android:id="@+id/obstacle_race_schedule"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -384,7 +384,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_light"
                     android:gravity="center"
-                    android:text="@string/hurdles"
+                    android:text="@string/obstacle_race"
                     android:textColor="@color/primary_text" />
 
             </LinearLayout>
