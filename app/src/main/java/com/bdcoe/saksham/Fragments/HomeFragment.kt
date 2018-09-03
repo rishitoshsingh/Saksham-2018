@@ -196,11 +196,11 @@ class HomeFragment : Fragment() {
                     val trans = TransitionDrawable(color)
                     activity?.runOnUiThread {
                         header_background.background = trans
-                        trans.startTransition(3000)
+                        trans.startTransition(2000)
                     }
                     if (nextPosition == 3) nextPosition = 0
                     if (previousPosition == 3) previousPosition = 0
-                    colorChangeHandler.postDelayed(this, 3000)
+                    colorChangeHandler.postDelayed(this, 5000)
                 }
             }
         }
@@ -242,7 +242,6 @@ class HomeFragment : Fragment() {
 
         }
     }
-
 
     private fun loadMedalTally() {
         val call = callMedals()
