@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -102,13 +103,21 @@ class NewsFragment : Fragment() {
             }
 
             override fun onResponse(call: Call<NewsResult>?, response: Response<NewsResult>?) {
-                newsList.removeAll(newsList)
-                if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
-                val data = response?.body()
-                data?.list?.forEach {
-                    newsList.add(it)
+                try {
+                    newsList.removeAll(newsList)
+                    if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
+                    val data = response?.body()
+                    if (data?.result?.toInt() == 1){
+                        if (!data.list.isEmpty()){
+                            data.list?.forEach {
+                                newsList.add(it)
+                            }
+                            viewAdapter.notifyDataSetChanged()
+                        }
+                    }
+                } catch (ex:Exception) {
+                    Log.d("NewsLoadFailed",ex.toString())
                 }
-                viewAdapter.notifyDataSetChanged()
             }
 
         })
@@ -120,25 +129,3 @@ class NewsFragment : Fragment() {
 
 
 }
-
-
-//news_template.setOnClickListener {
-//
-//            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
-//            val dialogFragment = NewsDialog()
-//            val bundle = Bundle()
-//
-//            val images = ArrayList<String>()
-//            images.add("285/one.jpg")
-//            images.add("351/one.jpg")
-//
-//            bundle.putString("NewsTeams", "CS vs ME")
-//            bundle.putString("NewsTitle", "Title")
-//            bundle.putString("NewsDescription", resources.getString(R.string.large_text))
-//            bundle.putString("Timestamp", "2 Days ago")
-//            bundle.putStringArrayList("Images",images)
-//
-//            dialogFragment.arguments = bundle
-//            dialogFragment.show(ft, "dialog")
-//
-//        }
