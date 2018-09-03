@@ -2,6 +2,7 @@ package com.bdcoe.saksham.Dialogs
 
 import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
@@ -78,6 +79,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
                 postPollRequest(mSpinner.selectedItem.toString(),sharedPreferences)
             }
             mCloseButton.setOnClickListener {
+                targetFragment?.onActivityResult(90,0,activity?.intent)
                 dialog.dismiss()
             }
         } else {
@@ -86,6 +88,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
             mCloseButton = view.findViewById<Button>(R.id.voted_for_close_button)
 
             mCloseButton.setOnClickListener {
+                targetFragment?.onActivityResult(90,0,activity?.intent)
                 dialog.dismiss()
             }
         }
@@ -113,6 +116,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
         call.enqueue(object : Callback<PollResult>{
             override fun onFailure(call: Call<PollResult>?, t: Throwable?) {
                 Toast.makeText(context, "Polls Submit Failed", Toast.LENGTH_SHORT).show()
+                targetFragment?.onActivityResult(90,0,activity?.intent)
                 dialog.dismiss()
             }
             override fun onResponse(call: Call<PollResult>?, response: Response<PollResult>?) {
@@ -121,6 +125,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
                 editor.putBoolean("Voted", true)
                 editor.putString("VotedFor", mSpinner.selectedItem.toString())
                 editor.commit()
+                targetFragment?.onActivityResult(90,1,activity?.intent)
                 dialog.dismiss()
 
             }
