@@ -122,7 +122,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
             "ME" -> dataflow = 3
             "EN" -> dataflow = 1
             "CE / EI" -> dataflow = 6
-            "MBA / MCA" -> dataflow = 7
+            "MCA / MBA" -> dataflow = 7
         }
         val call = callPolls(dataflow.toString())
         call.enqueue(object : Callback<PollResult>{
