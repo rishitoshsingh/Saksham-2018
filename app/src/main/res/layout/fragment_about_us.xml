@@ -82,6 +82,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="gone"
                             android:orientation="horizontal">
 
                             <Button
@@ -152,6 +153,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
+                            android:visibility="gone"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
@@ -230,6 +232,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="gone"
                             android:orientation="horizontal">
 
                             <Button
@@ -299,6 +302,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
+                            android:visibility="gone"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
@@ -377,6 +381,7 @@
                             android:textSize="13sp"/>
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -447,6 +452,7 @@
                             android:textSize="13sp"/>
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -526,6 +532,7 @@
                             android:textSize="13sp"/>
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -627,6 +634,7 @@
                             android:textSize="13sp" />
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -698,6 +706,7 @@
                             android:textSize="13sp" />
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -775,6 +784,7 @@
                             android:textSize="13sp" />
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -872,9 +882,10 @@
                             android:text="Sports Officer"
                             android:textColor="@color/primary_text"
                             android:textSize="13sp"
-                            android:visibility="invisible" />
+                            android:visibility="gone" />
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -943,9 +954,10 @@
                             android:text="Sports Officer"
                             android:textColor="@color/primary_text"
                             android:textSize="13sp"
-                            android:visibility="invisible" />
+                            android:visibility="gone" />
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -1021,9 +1033,10 @@
                             android:text="Sports Officer"
                             android:textColor="@color/primary_text"
                             android:textSize="13sp"
-                            android:visibility="invisible" />
+                            android:visibility="gone" />
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -1123,6 +1136,7 @@
                             android:textSize="13sp"/>
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -1194,6 +1208,7 @@
                             android:textSize="13sp"/>
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -1271,6 +1286,7 @@
                             android:textSize="13sp"/>
 
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
