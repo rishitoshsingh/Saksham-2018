@@ -9,11 +9,23 @@ import android.os.Handler
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
+import com.bdcoe.saksham.Adapters.NewsAdapter
 import com.bdcoe.saksham.Dialogs.MedalTallyDialog
+import com.bdcoe.saksham.Dialogs.NewsDialog
+import com.bdcoe.saksham.Dialogs.PollDialog
+import com.bdcoe.saksham.Network.Clients.BdcoeClient
+import com.bdcoe.saksham.Network.ServiceGenerator
+import com.bdcoe.saksham.POJOs.Medals.MedalsResult
+import com.bdcoe.saksham.POJOs.News.NewsResult
+import com.bdcoe.saksham.POJOs.Poll.PollResult
 import com.bdcoe.saksham.R
+import com.github.marlonlom.utilities.timeago.TimeAgo
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.Legend
@@ -23,17 +35,6 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.fragment_home.*
-import android.util.Log
-import android.widget.*
-import com.bdcoe.saksham.Adapters.NewsAdapter
-import com.bdcoe.saksham.Dialogs.NewsDialog
-import com.bdcoe.saksham.Dialogs.PollDialog
-import com.bdcoe.saksham.Network.Clients.BdcoeClient
-import com.bdcoe.saksham.Network.ServiceGenerator
-import com.bdcoe.saksham.POJOs.Medals.MedalsResult
-import com.bdcoe.saksham.POJOs.News.NewsResult
-import com.bdcoe.saksham.POJOs.Poll.PollResult
-import com.github.marlonlom.utilities.timeago.TimeAgo
 import kotlinx.android.synthetic.main.fragment_news.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -49,14 +50,14 @@ class HomeFragment : Fragment() {
     private lateinit var colorChangeHandler: Handler
     private lateinit var colorChangingRunnable: Runnable
     private var fragmentRunning: Boolean = false
-    private lateinit var pieChart:PieChart
+    private lateinit var pieChart: PieChart
 
     private var newsList: ArrayList<com.bdcoe.saksham.POJOs.News.List> = ArrayList<com.bdcoe.saksham.POJOs.News.List>()
     private lateinit var viewAdapter: NewsAdapter
     private lateinit var viewManager: LinearLayoutManager
 
 
-    private lateinit var client:BdcoeClient
+    private lateinit var client: BdcoeClient
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -79,10 +80,10 @@ class HomeFragment : Fragment() {
                 val bundle = Bundle()
 
                 val images: ArrayList<String> = ArrayList()
-                if (news.image1 != null )   images.add(news.image1)
-                if (news.image2 != null )   images.add(news.image2)
-                if (news.image3 != null )   images.add(news.image3)
-                if (news.image4 != null )   images.add(news.image4)
+                if (news.image1 != null) images.add(news.image1)
+                if (news.image2 != null) images.add(news.image2)
+                if (news.image3 != null) images.add(news.image3)
+                if (news.image4 != null) images.add(news.image4)
 
                 bundle.putString("NewsTeams", news.teams)
                 bundle.putString("NewsTitle", news.sport.trim())
@@ -121,12 +122,9 @@ class HomeFragment : Fragment() {
         initializeClickListners()
 
 
-
-
-
     }
 
-    private fun initializePollChart(pieChart: PieChart,pollsArray:ArrayList<Float>) {
+    private fun initializePollChart(pieChart: PieChart, pollsArray: ArrayList<Float>) {
 
         var i = 0
         val entries = mutableListOf<PieEntry>()
@@ -212,7 +210,7 @@ class HomeFragment : Fragment() {
             val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
             val dialogFragment = MedalTallyDialog()
             val bundle = Bundle()
-            bundle.putInt("year",2015)
+            bundle.putInt("year", 2015)
             dialogFragment.arguments = bundle
             dialogFragment.show(ft, "dialog")
         }
@@ -220,7 +218,7 @@ class HomeFragment : Fragment() {
             val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
             val dialogFragment = MedalTallyDialog()
             val bundle = Bundle()
-            bundle.putInt("year",2016)
+            bundle.putInt("year", 2016)
             dialogFragment.arguments = bundle
             dialogFragment.show(ft, "dialog")
         }
@@ -228,7 +226,7 @@ class HomeFragment : Fragment() {
             val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
             val dialogFragment = MedalTallyDialog()
             val bundle = Bundle()
-            bundle.putInt("year",2017)
+            bundle.putInt("year", 2017)
             dialogFragment.arguments = bundle
             dialogFragment.show(ft, "dialog")
         }
@@ -245,22 +243,27 @@ class HomeFragment : Fragment() {
 
     private fun loadMedalTally() {
         val call = callMedals()
-        call.enqueue(object : Callback<MedalsResult>{
+        call.enqueue(object : Callback<MedalsResult> {
             override fun onFailure(call: Call<MedalsResult>?, t: Throwable?) {
                 Toast.makeText(context, "Medals Load Failed", Toast.LENGTH_SHORT).show()
             }
+
             override fun onResponse(call: Call<MedalsResult>?, response: Response<MedalsResult>?) {
-                val medalsData = response?.body()
-                if (medalsData != null && medalsData.result.toInt() == 1) {
-                    populateMedalsInTable(medalsData?.list)
-                } else Toast.makeText(context,"No Data Found",Toast.LENGTH_SHORT).show()
+                try {
+                    val medalsData = response?.body()
+                    if (medalsData != null && medalsData.result.toInt() == 1) {
+                        populateMedalsInTable(medalsData?.list)
+                    } else Toast.makeText(context, "No Data Found", Toast.LENGTH_SHORT).show()
+                } catch (ex:Exception){
+                    Log.d("MedalLoadFailed",ex.toString())
+                }
             }
 
             private fun populateMedalsInTable(list: List<com.bdcoe.saksham.POJOs.Medals.List>?) {
-                if(medal_row_placeholder != null)   medal_row_placeholder.visibility = View.GONE
+                if (medal_row_placeholder != null) medal_row_placeholder.visibility = View.GONE
                 list?.forEach {
                     val inflater = LayoutInflater.from(context)
-                    val view = inflater.inflate(R.layout.medal_tally_row,null)
+                    val view = inflater.inflate(R.layout.medal_tally_row, null)
                     val teamTextView = view.findViewById<TextView>(R.id.row_team)
                     val goldTextView = view.findViewById<TextView>(R.id.row_gold)
                     val silverTextView = view.findViewById<TextView>(R.id.row_silver)
@@ -283,25 +286,29 @@ class HomeFragment : Fragment() {
 
     private fun loadPolls() {
         val call = callPolls()
-        call.enqueue(object : Callback<PollResult>{
+        call.enqueue(object : Callback<PollResult> {
             override fun onFailure(call: Call<PollResult>?, t: Throwable?) {
                 Toast.makeText(context, "Polls Load Failed", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<PollResult>?, response: Response<PollResult>?) {
-                val data = response?.body()
-                val pollsArray = ArrayList<Float>()
-                if (data?.result?.toInt() == 1){
-                    pollsArray.add(data.list[0].cs.toFloat())
-                    pollsArray.add(data.list[0].it.toFloat())
-                    pollsArray.add(data.list[0].ec.toFloat())
-                    pollsArray.add(data.list[0].me.toFloat())
-                    pollsArray.add(data.list[0].en.toFloat())
-                    pollsArray.add(data.list[0].ceei.toFloat())
-                    pollsArray.add(data.list[0].mca.toFloat())
-                }
-                initializePollChart(pieChart,pollsArray)
-                total_responses.text = data?.list!![0].total.toString() + " Responses so far"
+               try {
+                   val data = response?.body()
+                   val pollsArray = ArrayList<Float>()
+                   if (data?.result?.toInt() == 1) {
+                       pollsArray.add(data.list[0].cs.toFloat())
+                       pollsArray.add(data.list[0].it.toFloat())
+                       pollsArray.add(data.list[0].ec.toFloat())
+                       pollsArray.add(data.list[0].me.toFloat())
+                       pollsArray.add(data.list[0].en.toFloat())
+                       pollsArray.add(data.list[0].ceei.toFloat())
+                       pollsArray.add(data.list[0].mca.toFloat())
+                   }
+                   initializePollChart(pieChart, pollsArray)
+                   total_responses.text = data?.list!![0].total.toString() + " Responses so far"
+               }catch (ex:Exception){
+                   Log.d("PollsLoadError",ex.toString())
+               }
             }
         })
 
@@ -316,17 +323,22 @@ class HomeFragment : Fragment() {
             }
 
             override fun onResponse(call: Call<NewsResult>?, response: Response<NewsResult>?) {
-                newsList.removeAll(newsList)
-                if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
-                val data = response?.body()
+                try {
+                    newsList.removeAll(newsList)
+                    if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
+                    val data = response?.body()
 
-                if (data?.list != null){
-                    newsList.add(data.list[0])
-                    newsList.add(data.list[1])
-                    viewAdapter.notifyDataSetChanged()
-
-                } else {
-                    Toast.makeText(context,"Latest News Load Failed",Toast.LENGTH_SHORT).show()
+                    if (data?.result?.toInt() == 1) {
+                        if (!data.list.isEmpty()) {
+                            newsList.add(data.list[0])
+                            newsList.add(data.list[1])
+                            viewAdapter.notifyDataSetChanged()
+                        }
+                    } else {
+                        Toast.makeText(context, "Latest News Load Failed", Toast.LENGTH_SHORT).show()
+                    }
+                } catch (ex:Exception){
+                    Log.d("NewsLoad",ex.toString())
                 }
 
             }
