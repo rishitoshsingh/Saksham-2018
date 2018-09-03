@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/schedule_sports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
+        tools:text="Football" />
+
+    <TextView
+        android:id="@+id/schedule_boys_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="start"
+        android:text="Boys"
+        android:textColor="@color/primary_text"
+        android:textSize="19sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/schedule_boys"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/schedule_girls_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="start"
+        android:text="Girls"
+        android:textColor="@color/primary_text"
+        android:textSize="19sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/schedule_girls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:id="@+id/schedule_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ProgressBar
+            android:id="@+id/schedule_progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/schedule_error_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/no_data_found"
+            android:textColor="@color/colorAccent"
+            android:textSize="19sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/schedule_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/pill_button"
+        android:focusableInTouchMode="true"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/close"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary" />
+</LinearLayout>

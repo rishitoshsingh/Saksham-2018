@@ -49,7 +49,6 @@
             android:textColor="@color/colorPrimary"
             android:textAllCaps="false"
             android:background="@drawable/pill_button"
-            android:focusable="true"
             android:layout_alignParentEnd="true"
             android:text="@string/ok"/>
 

@@ -41,7 +41,6 @@
                 android:layout_gravity="center"
                 android:background="@drawable/pill_button"
                 android:fontFamily="@font/roboto_light"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:text="@string/submit"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF" />
@@ -62,7 +61,6 @@
                 android:layout_gravity="center"
                 android:background="@drawable/pill_button"
                 android:fontFamily="@font/roboto_light"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:text="@string/close"
                 android:textAllCaps="false"
                 android:textColor="#FFFFFF" />

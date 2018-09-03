@@ -2,6 +2,7 @@ package com.bdcoe.saksham.Adapters
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
 import android.view.ViewGroup
 import android.util.SparseArray
 import android.support.v4.app.FragmentStatePagerAdapter
@@ -17,7 +18,9 @@ import android.view.View
    all active fragments and manages the fragment lifecycles.
    Usage involves extending from SmartFragmentStatePagerAdapter as you would any other PagerAdapter.
 */
-abstract class SmartFragmentStatePagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager) {
+abstract class SmartFragmentStatePagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+
+//abstract class SmartFragmentStatePagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager) {
     // Sparse array to keep track of registered fragments in memory
     private val registeredFragments = SparseArray<Fragment>()
 

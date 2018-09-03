@@ -22,9 +22,10 @@
     </style>
 
     <style name="MedalTallyDialogStyle" parent="android:Theme.Dialog">
-        <item name="android:background">@android:color/transparent</item>
+        <!--<item name="android:background">@android:color/transparent</item>-->
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@drawable/view_background</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowMinWidthMajor">90%</item>
         <item name="android:windowMinWidthMinor">90%</item>
@@ -33,5 +34,17 @@
         <item name="android:buttonTint">@color/colorAccent</item>
 
     </style>
+
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/new_bottomsheet_bg</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+
 
 </resources>

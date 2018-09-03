@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:paddingTop="8dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        android:id="@+id/schedule_team"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="center"
+        android:text="@string/cs"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:textColor="@color/primary_text"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/schedule_date"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/secondary_text" />
+
+    <TextView
+        android:id="@+id/schedule_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto_light"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="@color/secondary_text"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

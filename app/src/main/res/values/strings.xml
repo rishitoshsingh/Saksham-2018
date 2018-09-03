@@ -54,4 +54,20 @@
     <string name="bdcoe_coordinators">BDCoE Coordinators</string>
     <string name="media_team">Media Team</string>
     <string name="vote_now">Vote Now</string>
+    <string name="cricket">Cricket</string>
+    <string name="basketball">Basketball</string>
+    <string name="football">Football</string>
+    <string name="handball">Handball</string>
+    <string name="table_tennis">Table Tennis</string>
+    <string name="athletics">Athletics</string>
+    <string name="badminton">Badminton</string>
+    <string name="powerlifting">Powerlifting</string>
+    <string name="carrom">Carrom</string>
+    <string name="chess">Chess</string>
+    <string name="volleyball">Volleyball</string>
+    <string name="kho_kho">Kho Kho</string>
+    <string name="kabaddi">Kabaddi</string>
+    <string name="pool">Pool</string>
+    <string name="hurdles">Hurdles</string>
+    <string name="no_data_found">No Data Found</string>
 </resources>
