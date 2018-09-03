@@ -92,7 +92,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -102,7 +103,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="gone" />
 
                         </LinearLayout>
 
@@ -135,18 +137,18 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light"
+                            android:text="Mr. Pratap Singh"
                             android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Prof. V. K. Parashar" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Dean Student Welfare"
                             android:fontFamily="@font/roboto_light_italic"
+                            android:text="Sports' Officer"
                             android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
+                            android:textSize="13sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -161,7 +163,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -171,7 +174,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                         </LinearLayout>
 
@@ -236,7 +240,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -246,7 +251,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                         </LinearLayout>
 
@@ -304,7 +310,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -314,7 +321,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                         </LinearLayout>
 
@@ -381,7 +389,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -391,7 +400,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                         </LinearLayout>
 
@@ -449,7 +459,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -459,7 +470,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                         </LinearLayout>
 
@@ -526,7 +538,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -536,7 +549,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
 
 
@@ -625,7 +639,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -635,7 +650,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                         </LinearLayout>
 
@@ -694,7 +710,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -704,7 +721,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                         </LinearLayout>
 
@@ -769,7 +787,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -779,7 +798,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                         </LinearLayout>
 
@@ -830,28 +850,29 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/sabu"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
-                            android:layout_height="176dp" />
+                            android:layout_height="176dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/kunwar" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light"
+                            android:text="Kunwar Ashutosh Singh"
                             android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Mr. Pratap Singh" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Sports Officer"
                             android:fontFamily="@font/roboto_light_italic"
+                            android:text="Sports Officer"
                             android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
+                            android:textSize="13sp"
+                            android:visibility="invisible" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -866,7 +887,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -876,7 +898,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                         </LinearLayout>
 
@@ -898,28 +921,29 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/sabu"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
-                            android:layout_height="176dp" />
+                            android:layout_height="176dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/anupam" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light"
+                            android:text="Anupam Kumar Singh"
                             android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Mr. Pratap Singh" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Sports Officer"
                             android:fontFamily="@font/roboto_light_italic"
+                            android:text="Sports Officer"
                             android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
+                            android:textSize="13sp"
+                            android:visibility="invisible" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -934,7 +958,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                             <Button
                                 android:layout_width="0dp"
@@ -944,7 +969,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                         </LinearLayout>
 
@@ -973,28 +999,29 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/sabu"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
-                            android:layout_height="176dp" />
+                            android:layout_height="176dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ashutosh" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light"
+                            android:text="Ashutosh Anand"
                             android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Mr. Pratap Singh" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Sports Officer"
                             android:fontFamily="@font/roboto_light_italic"
+                            android:text="Sports Officer"
                             android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
+                            android:textSize="13sp"
+                            android:visibility="invisible" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1009,7 +1036,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                             <Button
                                 android:layout_width="0dp"
@@ -1019,7 +1047,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                         </LinearLayout>
 
@@ -1106,7 +1135,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                             <Button
                                 android:layout_width="0dp"
@@ -1116,7 +1146,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                         </LinearLayout>
 
@@ -1175,7 +1206,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                             <Button
                                 android:layout_width="0dp"
@@ -1185,7 +1217,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                         </LinearLayout>
 
@@ -1250,7 +1283,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action1"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                             <Button
                                 android:layout_width="0dp"
@@ -1260,7 +1294,8 @@
                                 android:fontFamily="@font/roboto_light"
                                 android:text="Action2"
                                 android:textAllCaps="false"
-                                android:textColor="@color/colorAccent" />
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible"/>
 
                         </LinearLayout>
 
