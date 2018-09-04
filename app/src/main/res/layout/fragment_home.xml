@@ -320,7 +320,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
             android:padding="16dp"
-            android:text="@string/latest_update"
+            android:text="@string/powered_by"
             android:textColor="@color/primary_text"
             android:textSize="22sp" />
 
