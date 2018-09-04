@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
@@ -315,14 +316,53 @@
 
         </android.support.v7.widget.CardView>
 
-        <TextView
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
-            android:padding="16dp"
-            android:text="@string/powered_by"
-            android:textColor="@color/primary_text"
-            android:textSize="22sp" />
+            android:paddingEnd="16dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingStart="16dp">
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:id="@+id/bdc_logo"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bdc" />
+
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/bdc_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/powered_by"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light_italic"
+                    android:paddingStart="16dp"
+                    android:text="@string/powered_by"
+                    android:textColor="@color/primary_text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/bdc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/bdcoe"
+                    android:textColor="@color/colorAccent"
+                    android:paddingStart="16dp"
+                    android:textSize="21sp"
+                    tools:text="Big Data Centre of Excellence" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </LinearLayout>
 
