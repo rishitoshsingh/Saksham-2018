@@ -154,7 +154,7 @@
                 android:fontFamily="@font/roboto_light"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="Hostler"
+                android:text="Hosteler"
                 android:textColor="@drawable/radio_color" />
 
             <RadioButton

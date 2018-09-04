@@ -14,6 +14,9 @@ import com.bdcoe.saksham.Network.Model
 import com.bdcoe.saksham.Network.ServiceGenerator
 import com.bdcoe.saksham.R
 import kotlinx.android.synthetic.main.fragment_register.*
+import okhttp3.MediaType
+import okhttp3.RequestBody
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -171,8 +174,35 @@ class RegisterFragment : Fragment() {
                             }
 
                             interest = interest.substring(0, interest.length - 1)
-                            val model = Model(name, studentNo, branch, year, contactNumber, interest, hostler, sex)
-                            val call = callRegisterUser(model)
+//                            val model = Model(name, studentNo, branch, year, contactNumber, interest, hostler, sex)
+
+                            try{
+
+                                val NAME = "Name"
+                                val ST_NO = "StudentNo"
+                                val NUMBER = "ContactNumber"
+                                val MALE = "Gender"
+                                val HOSTLER = "Hosteler"
+                                val BRANCH = "Branch"
+                                val YEAR = "Year"
+                                val INTEREST = "SportsInterested"
+
+                                val json = JSONObject()
+                                json.put(NAME, name)
+                                json.put(ST_NO, studentNo)
+                                json.put(NUMBER, contactNumber)
+                                json.put(BRANCH, branch)
+                                json.put(YEAR, year)
+                                json.put(MALE, sex)
+                                json.put(HOSTLER, hostler)
+                                json.put(INTEREST, interest)
+
+                                val JSON = MediaType.parse("application/json; charset=utf-8")
+                                val body = RequestBody.create(JSON, json.toString())
+
+
+
+                            val call = callRegisterUser(body)
                             try {
 
                                 call.enqueue(object : Callback<String> {
@@ -182,16 +212,22 @@ class RegisterFragment : Fragment() {
 
                                     override fun onResponse(call: Call<String>?, response: Response<String>?) {
                                         val resultName = response?.body()
-                                        if (resultName == name) {
+                                        if (response!!.isSuccessful) {
                                             Toast.makeText(activity, "Registered", Toast.LENGTH_LONG).show()
                                         } else {
                                             Toast.makeText(activity, "Registration Failed", Toast.LENGTH_LONG).show()
                                         }
+
                                     }
                                 })
                             } catch (ex: Exception) {
                                 Toast.makeText(activity, "Registration Failed", Toast.LENGTH_LONG).show()
                                 Log.d("Registration", "Failed", ex)
+                            }
+
+                            }
+                            catch(e: Exception){
+
                             }
 
                         } else {
@@ -246,6 +282,6 @@ class RegisterFragment : Fragment() {
         Log.d("changeGames", gender.toString())
     }
 
-    private fun callRegisterUser(model: Model): Call<String> = client.registerUser(model)
+    private fun callRegisterUser(model: RequestBody): Call<String> = client.registerUser(model)
 
 }
