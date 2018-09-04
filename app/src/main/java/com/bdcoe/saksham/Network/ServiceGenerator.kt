@@ -16,7 +16,7 @@ class ServiceGenerator {
             private val retrofit:Retrofit = bdcoeBuilder.build()
 
             private val siBuilder:Retrofit.Builder = Retrofit.Builder()
-                    .baseUrl("https://www.googleapis.com/youtube/v3/")
+                    .baseUrl("http://53f70cdc.ngrok.io/")
                     .addConverterFactory(GsonConverterFactory.create())
             private val siRetrofit:Retrofit = siBuilder.build()
 

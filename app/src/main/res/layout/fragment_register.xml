@@ -1,435 +1,377 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:paddingBottom="30dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Name"
+            android:inputType="text"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/register_student_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Student No"
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <RadioGroup
+            android:id="@+id/register_gender_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/register_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@null"
+                android:checked="true"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Male"
+                android:textColor="@drawable/radio_color" />
+
+            <RadioButton
+                android:id="@+id/register_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@null"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Female"
+                android:textColor="@drawable/radio_color" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/register_conatct_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Contact No."
+            android:inputType="number"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <LinearLayout
-            android:paddingBottom="30dp"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
-            <EditText
-                android:fontFamily="@font/roboto_light"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/etName"
-                android:inputType="text"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:hint="Name" />
-
-            <EditText
+                android:layout_weight="1"
                 android:fontFamily="@font/roboto_light"
-                android:layout_width="match_parent"
+                android:text="Branch:" />
+
+            <Spinner
+                android:id="@+id/register_branch"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/etSt_No"
-                android:layout_margin="5dp"
-                android:inputType="number"
-                android:hint="Student No" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_marginEnd="4dp"
-                    android:id="@+id/male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/radio_selector"
-                    android:button="@null"
-                    android:checked="true"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Male"
-                    android:textColor="@drawable/radio_color" />
-
-                <RadioButton
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_marginStart="4dp"
-                    android:id="@+id/female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/radio_selector"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Female"
-                    android:textColor="@drawable/radio_color" />
-            </RadioGroup>
-
-            <EditText
-                android:fontFamily="@font/roboto_light"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:id="@+id/etConatct"
-                android:layout_margin="5dp"
-                android:inputType="number"
-                android:hint="Contact No." />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:text="Branch:" />
-
-                <Spinner
-                    android:layout_width="0dp"
-                    android:padding="5dp"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:paddingTop="5dp"
-                    android:paddingLeft="5dp"
-                    android:paddingBottom="5dp"
-                    android:entries="@array/team_names"
-                    android:id="@+id/spBranches"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="5dp"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:text="Year:" />
-
-                <Spinner
-                    android:layout_width="0dp"
-                    android:padding="5dp"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:paddingTop="5dp"
-                    android:paddingLeft="5dp"
-                    android:paddingBottom="5dp"
-                    android:entries="@array/year"
-                    android:id="@+id/spYear"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <RadioGroup
-                android:id="@+id/radioGroup2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_marginEnd="4dp"
-                    android:id="@+id/hostler"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/radio_selector"
-                    android:button="@null"
-                    android:checked="true"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Hostler"
-                    android:textColor="@drawable/radio_color" />
-
-                <RadioButton
-                    android:fontFamily="@font/roboto_light"
-                    android:layout_marginStart="4dp"
-                    android:id="@+id/DayScholar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/radio_selector"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Day Scholar"
-                    android:textColor="@drawable/radio_color" />
-            </RadioGroup>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TableLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content">
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cricket"
-                        android:padding="5dp"
-                        android:id="@+id/cricket" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Football"
-                        android:id="@+id/football" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Volleyball"
-                        android:id="@+id/Volleyball" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Basketball"
-                        android:id="@+id/Basketball" />
-
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Highjump"
-                        android:id="@+id/Highjump" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Longjump"
-                        android:id="@+id/Longjump" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Badminton"
-                        android:textSize="13.7dp"
-                        android:id="@+id/Badminton" />
-
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Kabaddi"
-                        android:id="@+id/Javlin" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Pool"
-                        android:id="@+id/Pool" />
-
-
-                </TableLayout>
-
-                <TableLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content">
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Chess"
-                        android:padding="5dp"
-                        android:id="@+id/chess" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Carrom"
-                        android:id="@+id/carrom" />
-
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TT"
-                        android:padding="5dp"
-                        android:id="@+id/tt" />
-
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Shotput"
-                        android:id="@+id/shotput" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Discus"
-                        android:id="@+id/discus" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Kho-Kho"
-                        android:id="@+id/martial" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Tug of war"
-                        android:id="@+id/tug" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Power Lift"
-                        android:padding="5dp"
-                        android:id="@+id/power" />
-
-
-                </TableLayout>
-
-                <TableLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content">
-
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Obstacle Race(Boys)"
-                        android:id="@+id/Hurdles" />
-
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="Javelin"
-                        android:id="@+id/Javelin" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="100m"
-                        android:id="@+id/c100m" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="200m"
-                        android:id="@+id/c200m" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="400m"
-                        android:padding="5dp"
-                        android:id="@+id/c400m" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="800m"
-                        android:id="@+id/c800m" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="1500m"
-                        android:id="@+id/c1500m" />
-
-                    <CheckBox
-                        android:fontFamily="@font/roboto_light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="4x100m"
-                        android:id="@+id/c4100m" />
-
-
-                </TableLayout>
-            </LinearLayout>
-
-            <Button
-                android:fontFamily="@font/roboto_light"
-                android:id="@+id/register_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/pill_button"
-                android:text="Register"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#fff" />
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/colorPrimary"/>
-
+                android:layout_weight="1"
+                android:entries="@array/team_names"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_light"
+                android:text="Year:" />
+
+            <Spinner
+                android:id="@+id/register_year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/year"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/register_hostler_days_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/register_hostler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@null"
+                android:checked="true"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Hostler"
+                android:textColor="@drawable/radio_color" />
+
+            <RadioButton
+                android:id="@+id/register_day_scholar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@null"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Day Scholar"
+                android:textColor="@drawable/radio_color" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/athletics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Athletics" />
+
+                <CheckBox
+                    android:id="@+id/volleyball"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Volleyball" />
+
+                <CheckBox
+                    android:id="@+id/basketball"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Basketball" />
+
+                <CheckBox
+                    android:id="@+id/cricket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Cricket" />
+
+                <CheckBox
+                    android:id="@+id/football"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Football" />
+
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/chess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Chess" />
+
+                <CheckBox
+                    android:id="@+id/carrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Carrom" />
+
+                <CheckBox
+                    android:id="@+id/tug_of_war"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Tug of war" />
+
+                <CheckBox
+                    android:id="@+id/kabaddi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Kabaddi" />
+
+                <CheckBox
+                    android:id="@+id/pool"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Pool" />
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/badminton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Badminton"
+                    android:textSize="13.7dp" />
+
+                <CheckBox
+                    android:id="@+id/table_tennis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_light"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="Table Tennis" />
+
+                <CheckBox
+                    android:id="@+id/kho_kho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:padding="5dp"
+                    android:text="Kho Kho" />
+
+                <CheckBox
+                    android:id="@+id/power_lifting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_light"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="Power Lifting." />
+
+                <CheckBox
+                    android:id="@+id/obstacle_race"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto_light"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:text="Obstacle Race" />
+
+
+            </TableLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/pill_button"
+            android:fontFamily="@font/roboto_light"
+            android:text="Register"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#fff" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary" />
+
+    </LinearLayout>
+
 </android.support.v4.widget.NestedScrollView>
+
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="Javelin"--><!--android:id="@+id/Javelin" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="100m"--><!--android:id="@+id/c100m" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="200m"--><!--android:id="@+id/c200m" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:text="400m"--><!--android:padding="5dp"--><!--android:id="@+id/c400m" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="800m"--><!--android:id="@+id/c800m" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="1500m"--><!--android:id="@+id/c1500m" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="4x100m"--><!--android:id="@+id/c4100m" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="Discus"--><!--android:id="@+id/discus" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="Shotput"--><!--android:id="@+id/shotput" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="Highjump"--><!--android:id="@+id/Highjump" />-->
+
+    <!--<CheckBox--><!--android:fontFamily="@font/roboto_light"--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:padding="5dp"--><!--android:text="Longjump"--><!--android:id="@+id/Longjump" />-->
