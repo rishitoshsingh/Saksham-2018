@@ -41,7 +41,7 @@ class ScheduleFragment : Fragment() {
             showDialog()
         }
         table_tennis_schedule.setOnClickListener {
-            mSports = "Table-Tennis"
+            mSports = "Table Tennis"
             showDialog()
         }
         atheletics_schedule.setOnClickListener {
@@ -85,7 +85,7 @@ class ScheduleFragment : Fragment() {
             showDialog()
         }
         obstacle_race_schedule.setOnClickListener {
-            mSports = "Obstucle Race"
+            mSports = "Obstacle Race"
             showDialog()
         }
     }

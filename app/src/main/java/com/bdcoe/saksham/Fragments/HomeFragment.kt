@@ -53,10 +53,6 @@ class HomeFragment : Fragment() {
     private var fragmentRunning: Boolean = false
     private lateinit var pieChart: PieChart
 
-    private var newsList: ArrayList<com.bdcoe.saksham.POJOs.News.List> = ArrayList<com.bdcoe.saksham.POJOs.News.List>()
-    private lateinit var viewAdapter: NewsAdapter
-    private lateinit var viewManager: LinearLayoutManager
-
     private val POLL_DIALOG_REQUEST_CODE:Int = 90
     private val POLL_SUBMITTED_CODE:Int = 1
     private val POLL_NOT_SUBMITTED_CODE:Int = 0
@@ -74,51 +70,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         client = ServiceGenerator.createBdcoeService(BdcoeClient::class.java)
 
-        viewManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
-        viewAdapter = object : NewsAdapter(context!!, newsList) {
-            override fun showDialog(news: com.bdcoe.saksham.POJOs.News.List) {
-
-                val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
-                val dialogFragment = NewsDialog()
-                val bundle = Bundle()
-
-                val images: ArrayList<String> = ArrayList()
-                if (news.image1 != null) images.add(news.image1)
-                if (news.image2 != null) images.add(news.image2)
-                if (news.image3 != null) images.add(news.image3)
-                if (news.image4 != null) images.add(news.image4)
-
-                bundle.putString("NewsTeams", news.teams)
-                bundle.putString("NewsTitle", news.sport.trim())
-                bundle.putString("NewsDescription", news.desc)
-
-                val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-                val date = sdf.parse(news.timestamp)
-                val millis = date.time
-                val relativeTime = TimeAgo.using(millis)
-
-                bundle.putString("Timestamp", relativeTime)
-                bundle.putStringArrayList("Images", images)
-
-                dialogFragment.arguments = bundle
-                dialogFragment.show(ft, "dialog")
-
-            }
-        }
-
-        latest_news_recycler.apply {
-            setHasFixedSize(true)
-            layoutManager = viewManager
-            adapter = viewAdapter
-            itemAnimator = DefaultItemAnimator()
-        }
-
-
-
         loadMedalTally()
         loadPolls()
-        loadNews()
 
         pieChart = view.findViewById<PieChart>(R.id.poll_chart)
 //        initializePollChart(pieChart)
@@ -328,41 +281,8 @@ class HomeFragment : Fragment() {
 
     }
 
-    private fun loadNews() {
-        val call = callNews()
-        call.enqueue(object : Callback<NewsResult> {
-            override fun onFailure(call: Call<NewsResult>?, t: Throwable?) {
-                if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
-                Toast.makeText(context, "Load News Failed", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onResponse(call: Call<NewsResult>?, response: Response<NewsResult>?) {
-                try {
-                    newsList.removeAll(newsList)
-                    if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
-                    val data = response?.body()
-
-                    if (data?.result?.toInt() == 1) {
-                        if (!data.list.isEmpty()) {
-                            newsList.add(data.list[0])
-                            newsList.add(data.list[1])
-                            viewAdapter.notifyDataSetChanged()
-                        }
-                    } else {
-                        Toast.makeText(context, "Latest News Load Failed", Toast.LENGTH_SHORT).show()
-                    }
-                } catch (ex: Exception) {
-                    Log.d("NewsLoad", ex.toString())
-                }
-
-            }
-
-        })
-    }
-
     private fun callMedals(): Call<MedalsResult> = client.getMedalas("3")
     private fun callPolls(): Call<PollResult> = client.getPolls("0")
-    private fun callNews(): Call<NewsResult> = client.getNews("2")
 
 
     override fun onPause() {
@@ -395,4 +315,4 @@ class HomeFragment : Fragment() {
         fragmentRunning = false
     }
 
-}// Required empty public constructor
+}
