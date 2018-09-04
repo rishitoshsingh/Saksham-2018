@@ -1,6 +1,7 @@
 package com.bdcoe.saksham.Fragments
 
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
@@ -64,6 +65,7 @@ class NewsFragment : Fragment() {
                 bundle.putString("NewsTeams", news.teams)
                 bundle.putString("NewsTitle", news.sport.trim())
                 bundle.putString("NewsDescription", news.desc)
+                bundle.putInt("Icon",getSportsDrawable(news.sport.trim()))
 
                 val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
                 val date = sdf.parse(news.timestamp)
@@ -123,6 +125,27 @@ class NewsFragment : Fragment() {
         })
 
 
+    }
+
+    private fun getSportsDrawable(sport: String): Int {
+        return when (sport) {
+            "Athletics" -> R.drawable.athletics
+            "Football" -> R.drawable.football
+            "Cricket" -> R.drawable.cricket
+            "Basketball" -> R.drawable.basketball
+            "Kabaddi" -> R.drawable.kabaddi
+            "Table Tennis" -> R.drawable.table_tennis
+            "Kho Kho" -> R.drawable.kho_kho
+            "Badminton" -> R.drawable.badminton
+            "Carrom" -> R.drawable.carrom
+            "Chess" -> R.drawable.chess
+            "Powerlifting" -> R.drawable.powerlifting
+            "Pool" -> R.drawable.pool
+            "Tug of War" -> R.drawable.tug_of_war
+            "Volleyball" -> R.drawable.volleyball
+            "Obstacle Race" -> R.drawable.hurdles
+            else -> R.drawable.athletics
+        }
     }
 
     private fun callNews(): Call<NewsResult> = client.getNews("3")

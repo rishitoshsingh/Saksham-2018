@@ -40,27 +40,13 @@ abstract class NewsAdapter(context: Context, moviesPassed: ArrayList<List>) : Re
     override fun getItemCount() = newsArrayList.size
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
-        var sportsIcon: Drawable = mContext.getDrawable(R.drawable.athletics)
+        var sportsIcon:Int
 
         val newsViewHolder = holder as NewsMovieHolder
         val news = newsArrayList[position]
-        if (news.sport == "Athletics") sportsIcon = mContext.getDrawable(R.drawable.athletics)
-        if (news.sport == "Football") sportsIcon = mContext.getDrawable(R.drawable.football)
-        if (news.sport == "Cricket") sportsIcon = mContext.getDrawable(R.drawable.cricket)
-        if (news.sport == "Basketball") sportsIcon = mContext.getDrawable(R.drawable.basketball)
-        if (news.sport == "Kabaddi") sportsIcon = mContext.getDrawable(R.drawable.kabaddi)
-        if (news.sport == "Table Tennis") sportsIcon = mContext.getDrawable(R.drawable.table_tennis)
-        if (news.sport == "Kho Kho") sportsIcon = mContext.getDrawable(R.drawable.kho_kho)
-        if (news.sport == "Badminton") sportsIcon = mContext.getDrawable(R.drawable.badminton)
-        if (news.sport == "Carrom") sportsIcon = mContext.getDrawable(R.drawable.carrom)
-        if (news.sport == "Chess") sportsIcon = mContext.getDrawable(R.drawable.chess)
-        if (news.sport == "Powerlifting") sportsIcon = mContext.getDrawable(R.drawable.powerlifting)
-        if (news.sport == "Pool") sportsIcon = mContext.getDrawable(R.drawable.pool)
-        if (news.sport == "Tug of War") sportsIcon = mContext.getDrawable(R.drawable.tug_of_war)
-        if (news.sport == "Volleyball") sportsIcon = mContext.getDrawable(R.drawable.volleyball)
-        if (news.sport == "Obstacle Race") sportsIcon = mContext.getDrawable(R.drawable.hurdles)
 
-        newsViewHolder.newsIcon.setImageDrawable(sportsIcon)
+        sportsIcon = getSportsDrawable(news.sport.trim())
+        newsViewHolder.newsIcon.setImageDrawable(mContext.getDrawable(sportsIcon))
 
 
         newsViewHolder.newsDescription.text = news.desc
@@ -98,6 +84,26 @@ abstract class NewsAdapter(context: Context, moviesPassed: ArrayList<List>) : Re
     }
 
     abstract fun showDialog(news: List)
+    private fun getSportsDrawable(sport: String): Int {
+        return when (sport) {
+            "Athletics" -> R.drawable.athletics
+            "Football" -> R.drawable.football
+            "Cricket" -> R.drawable.cricket
+            "Basketball" -> R.drawable.basketball
+            "Kabaddi" -> R.drawable.kabaddi
+            "Table Tennis" -> R.drawable.table_tennis
+            "Kho Kho" -> R.drawable.kho_kho
+            "Badminton" -> R.drawable.badminton
+            "Carrom" -> R.drawable.carrom
+            "Chess" -> R.drawable.chess
+            "Powerlifting" -> R.drawable.powerlifting
+            "Pool" -> R.drawable.pool
+            "Tug of War" -> R.drawable.tug_of_war
+            "Volleyball" -> R.drawable.volleyball
+            "Obstacle Race" -> R.drawable.hurdles
+            else -> R.drawable.athletics
+        }
+    }
 
     inner class NewsMovieHolder(view: View) : RecyclerView.ViewHolder(view) {
         var newsDescription: TextView = view.findViewById<TextView>(R.id.news_description)
@@ -109,4 +115,6 @@ abstract class NewsAdapter(context: Context, moviesPassed: ArrayList<List>) : Re
         var newsProgressBar: ProgressBar = view.findViewById<ProgressBar>(R.id.news_card_progressbar)
         var newsCardChild: RelativeLayout = view.findViewById<RelativeLayout>(R.id.news_card_child)
     }
+
+
 }

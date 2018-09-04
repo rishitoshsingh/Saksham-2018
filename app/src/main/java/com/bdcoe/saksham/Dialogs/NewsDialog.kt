@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.bdcoe.saksham.Adapters.SlidingImageAdapter
 import com.bdcoe.saksham.R
@@ -32,12 +33,14 @@ class NewsDialog:DialogFragment() {
     private lateinit var mDescriptionTextView: TextView
     private lateinit var mImagesPager:ViewPager
     private lateinit var mImagePagerIndicator:IndefinitePagerIndicator
+    private lateinit var mIconView:ImageView
 
     private lateinit var mTeams:String
     private lateinit var mNewsTitle:String
     private lateinit var mNewsDescription:String
     private lateinit var mTimestamp:String
     private lateinit var mImages:ArrayList<String>
+    private var mIcon:Int = 0
 
     companion object {
         fun newInstance(): NewsDialog {
@@ -56,6 +59,7 @@ class NewsDialog:DialogFragment() {
             mNewsDescription = bundle.getString("NewsDescription", resources.getString(R.string.large_text))
             mTimestamp = bundle.getString("Timestamp", "2 Days ago")
             mImages = bundle.getStringArrayList("Images")
+            mIcon = bundle.getInt("Icon")
         }
     }
 
@@ -70,7 +74,7 @@ class NewsDialog:DialogFragment() {
         mDescriptionTextView = view.findViewById<TextView>(R.id.news_dialog_description)
         mTimestampTextView = view.findViewById<TextView>(R.id.news_dialog_timestamp)
         mCloseButton = view.findViewById<Button>(R.id.news_dialog_close)
-
+        mIconView = view.findViewById<ImageView>(R.id.news_dialog_sports_icon)
 
         mTeamsTextView.text = mTeams
         mTimestampTextView.text = mTimestamp
@@ -78,6 +82,8 @@ class NewsDialog:DialogFragment() {
         mDescriptionTextView.text = mNewsDescription
         mImagesPager.adapter = SlidingImageAdapter(this.activity!!, mImages)
         mImagePagerIndicator.attachToViewPager(mImagesPager)
+        mIconView.setImageDrawable(context?.getDrawable(mIcon))
+
         mCloseButton.setOnClickListener {
             dialog.dismiss()
         }

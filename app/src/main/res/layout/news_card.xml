@@ -51,8 +51,7 @@
                     android:layout_centerVertical="true"
                     android:id="@+id/news_sports_icon"
                     android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/gold_medal" />
+                    android:layout_height="24dp" />
 
                 <TextView
                     android:id="@+id/news_team_versus"
