@@ -206,7 +206,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/anubhav"
+                            android:src="@drawable/yash"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="176dp" />
@@ -218,13 +218,13 @@
                             android:fontFamily="@font/roboto_light"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp"
-                            android:text="Anubhav Panwar" />
+                            android:text="Yash Saxena" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="College Captain (Boys)"
+                            android:text="Organizing Head"
                             android:fontFamily="@font/roboto_light_italic"
                             android:textColor="@color/primary_text"
                             android:textSize="13sp"/>
@@ -232,19 +232,18 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             android:orientation="horizontal">
 
                             <Button
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
+                                android:text="Ph No 8448161159"
                                 android:textAllCaps="false"
                                 android:textColor="@color/colorAccent"
-                                android:visibility="invisible" />
+                                android:visibility="visible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -277,7 +276,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/harshita"
+                            android:src="@drawable/anubhav"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="176dp" />
@@ -289,33 +288,32 @@
                             android:fontFamily="@font/roboto_light"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp"
-                            android:text="Harshita Mishra" />
+                            android:text="Anubhav Panwar" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="College Captain(Girls)"
+                            android:text="College Captain(Boys)"
                             android:fontFamily="@font/roboto_light_italic"
                             android:textColor="@color/primary_text"
                             android:textSize="13sp"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <Button
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
+                                android:text="Ph no 9810583629"
                                 android:textAllCaps="false"
                                 android:textColor="@color/colorAccent"
-                                android:visibility="invisible" />
+                                android:visibility="visible" />
 
                             <Button
                                 android:layout_width="0dp"
@@ -357,7 +355,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/shaurya"
+                            android:src="@drawable/harshita"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="176dp" />
@@ -369,13 +367,13 @@
                             android:fontFamily="@font/roboto_light"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp"
-                            android:text="Shaurya Parashar" />
+                            android:text="Harshita Mishra" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Vice Captain (Boys)"
+                            android:text="College Captain (Girls)"
                             android:fontFamily="@font/roboto_light_italic"
                             android:textColor="@color/primary_text"
                             android:textSize="13sp"/>
@@ -413,6 +411,86 @@
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:focusableInTouchMode="true"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:src="@drawable/shaurya"
+                            android:scaleType="centerCrop"
+                            android:layout_width="match_parent"
+                            android:layout_height="176dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/roboto_light"
+                            android:textColor="@color/primary_text"
+                            android:textSize="16sp"
+                            android:text="Shaurya Parashar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Vice Captain(Boys)"
+                            android:fontFamily="@font/roboto_light_italic"
+                            android:textColor="@color/primary_text"
+                            android:textSize="13sp"/>
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:fontFamily="@font/roboto_light"
+                                android:text="Action1"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
+
+                            <Button
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:fontFamily="@font/roboto_light"
+                                android:text="Action2"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorAccent"
+                                android:visibility="invisible" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -463,90 +541,11 @@
                                 android:layout_weight="1"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
+                                android:text="Ph No. 8448161159"
                                 android:textAllCaps="false"
                                 android:textColor="@color/colorAccent"
-                                android:visibility="invisible" />
-
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action2"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:focusableInTouchMode="true"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:src="@drawable/yash"
-                            android:scaleType="centerCrop"
-                            android:layout_width="match_parent"
-                            android:layout_height="176dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light"
-                            android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Yash Saxena" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Organising Head"
-                            android:fontFamily="@font/roboto_light_italic"
-                            android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
-
-                        <LinearLayout
-                            android:visibility="gone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible" />
+                                android:visibility="visible"
+                                />
 
                             <Button
                                 android:layout_width="0dp"
@@ -1085,12 +1084,14 @@
             android:padding="16dp"
             android:text="@string/media_team"
             android:textColor="@color/primary_text"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:visibility="invisible"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
