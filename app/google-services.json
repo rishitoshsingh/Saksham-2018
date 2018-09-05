@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "1065185585313-d4sufbh7gikd9vk4ttmcmlimr58tnuvg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bdcoe.saksham",
+            "certificate_hash": "5ffa73ce4528c6c9e38464b968ee242f7bceb2ba"
+          }
+        },
+        {
           "client_id": "1065185585313-pu1ga02klqinpiie71p57rd89kui8ce0.apps.googleusercontent.com",
           "client_type": 3
         }
