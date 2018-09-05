@@ -8,25 +8,19 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
-import android.support.v7.widget.DefaultItemAnimator
-import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import com.bdcoe.saksham.Adapters.NewsAdapter
 import com.bdcoe.saksham.Dialogs.MedalTallyDialog
-import com.bdcoe.saksham.Dialogs.NewsDialog
 import com.bdcoe.saksham.Dialogs.PollDialog
 import com.bdcoe.saksham.Network.Clients.BdcoeClient
 import com.bdcoe.saksham.Network.ServiceGenerator
 import com.bdcoe.saksham.POJOs.Medals.MedalsResult
-import com.bdcoe.saksham.POJOs.News.NewsResult
 import com.bdcoe.saksham.POJOs.Poll.PollResult
 import com.bdcoe.saksham.R
-import com.github.marlonlom.utilities.timeago.TimeAgo
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.Legend
@@ -36,11 +30,9 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_news.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.SimpleDateFormat
 
 
 /**
@@ -53,9 +45,9 @@ class HomeFragment : Fragment() {
     private var fragmentRunning: Boolean = false
     private lateinit var pieChart: PieChart
 
-    private val POLL_DIALOG_REQUEST_CODE:Int = 90
-    private val POLL_SUBMITTED_CODE:Int = 1
-    private val POLL_NOT_SUBMITTED_CODE:Int = 0
+    private val POLL_DIALOG_REQUEST_CODE: Int = 90
+    private val POLL_SUBMITTED_CODE: Int = 1
+    private val POLL_NOT_SUBMITTED_CODE: Int = 0
 
     private lateinit var client: BdcoeClient
 
@@ -200,8 +192,8 @@ class HomeFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == POLL_DIALOG_REQUEST_CODE){
-            if (resultCode == POLL_SUBMITTED_CODE){
+        if (requestCode == POLL_DIALOG_REQUEST_CODE) {
+            if (resultCode == POLL_SUBMITTED_CODE) {
                 loadPolls()
             }
         }
@@ -212,16 +204,23 @@ class HomeFragment : Fragment() {
         val call = callMedals()
         call.enqueue(object : Callback<MedalsResult> {
             override fun onFailure(call: Call<MedalsResult>?, t: Throwable?) {
-                Toast.makeText(context, "Medals Load Failed", Toast.LENGTH_SHORT).show()
+                if (medals_progressbar != null) medals_progressbar.visibility = View.GONE
+                if (medals_error_view != null) medals_error_view.visibility = View.VISIBLE
             }
 
             override fun onResponse(call: Call<MedalsResult>?, response: Response<MedalsResult>?) {
                 try {
                     val medalsData = response?.body()
                     if (medalsData != null && medalsData.result.toInt() == 1) {
+                        medals_empty_view.visibility = View.GONE
                         populateMedalsInTable(medalsData?.list)
-                    } else Toast.makeText(context, "No Data Found", Toast.LENGTH_SHORT).show()
+                    } else {
+                        if (medals_progressbar != null) medals_progressbar.visibility = View.GONE
+                        if (medals_error_view != null) medals_error_view.visibility = View.VISIBLE
+                    }
                 } catch (ex: Exception) {
+                    if (medals_progressbar != null) medals_progressbar.visibility = View.GONE
+                    if (medals_error_view != null) medals_error_view.visibility = View.VISIBLE
                     Log.d("MedalLoadFailed", ex.toString())
                 }
             }
@@ -255,7 +254,7 @@ class HomeFragment : Fragment() {
         val call = callPolls()
         call.enqueue(object : Callback<PollResult> {
             override fun onFailure(call: Call<PollResult>?, t: Throwable?) {
-                Toast.makeText(context, "Polls Load Failed", Toast.LENGTH_SHORT).show()
+                if (context != null) Toast.makeText(context, "Polls Load Failed", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<PollResult>?, response: Response<PollResult>?) {

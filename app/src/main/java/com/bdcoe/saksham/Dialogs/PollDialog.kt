@@ -115,12 +115,12 @@ class PollDialog : android.support.v4.app.DialogFragment() {
         val call = callPolls(dataflow.toString())
         call.enqueue(object : Callback<PollResult>{
             override fun onFailure(call: Call<PollResult>?, t: Throwable?) {
-                Toast.makeText(context, "Polls Submit Failed", Toast.LENGTH_SHORT).show()
+                if (context != null) Toast.makeText(context, "Polls Submit Failed", Toast.LENGTH_SHORT).show()
                 targetFragment?.onActivityResult(90,0,activity?.intent)
                 dialog.dismiss()
             }
             override fun onResponse(call: Call<PollResult>?, response: Response<PollResult>?) {
-                Toast.makeText(context, "Polls Submited.", Toast.LENGTH_SHORT).show()
+                if (context != null) Toast.makeText(context, "Polls Submited.", Toast.LENGTH_SHORT).show()
                 val editor = sharedPreferences.edit()
                 editor.putBoolean("Voted", true)
                 editor.putString("VotedFor", mSpinner.selectedItem.toString())
