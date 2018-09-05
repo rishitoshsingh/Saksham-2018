@@ -23,7 +23,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
+            android:fontFamily="@font/roboto_medium"
             android:padding="16dp"
             android:text="@string/organising_committee"
             android:textColor="@color/primary_text"
@@ -578,7 +578,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
+            android:fontFamily="@font/roboto_medium"
             android:padding="16dp"
             android:text="@string/developer_team"
             android:textColor="@color/primary_text"
@@ -762,7 +762,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/varun" />
+                            android:src="@drawable/varun2" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -828,7 +828,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
+            android:fontFamily="@font/roboto_medium"
             android:padding="16dp"
             android:text="@string/bdcoe_coordinators"
             android:textColor="@color/primary_text"

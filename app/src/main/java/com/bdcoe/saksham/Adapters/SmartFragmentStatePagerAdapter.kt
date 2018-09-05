@@ -18,7 +18,7 @@ import android.view.View
    all active fragments and manages the fragment lifecycles.
    Usage involves extending from SmartFragmentStatePagerAdapter as you would any other PagerAdapter.
 */
-abstract class SmartFragmentStatePagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+abstract class SmartFragmentStatePagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager) {
 
 //abstract class SmartFragmentStatePagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager) {
     // Sparse array to keep track of registered fragments in memory

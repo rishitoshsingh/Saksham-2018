@@ -21,6 +21,8 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@font/roboto_regular"
+            app:collapsedTitleTextAppearance="@font/roboto_thin"
             app:expandedTitleGravity="bottom"
             app:expandedTitleMargin="16dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"

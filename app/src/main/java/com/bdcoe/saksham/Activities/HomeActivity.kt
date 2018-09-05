@@ -40,9 +40,9 @@ class HomeActivity : AppCompatActivity() {
 
         toolbar_layout.setCollapsedTitleTextColor(resources.getColor(R.color.primary_text))
         toolbar_layout.setExpandedTitleColor(resources.getColor(R.color.primary_text))
-        val font = Typer.set(this).getFont(Font.ROBOTO_LIGHT)
-        toolbar_layout.setCollapsedTitleTypeface(font)
-        toolbar_layout.setExpandedTitleTypeface(font)
+//        val font = Typer.set(this).getFont(Font.ROBOTO_MEDIUM)
+//        toolbar_layout.setCollapsedTitleTypeface(font)
+//        toolbar_layout.setExpandedTitleTypefacefont)
 
         initializeNavigationBar()
         initializeViewPager()
