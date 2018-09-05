@@ -28,7 +28,7 @@ class ServiceGenerator {
             private val retrofit:Retrofit = bdcoeBuilder.build()
 
             private val siBuilder:Retrofit.Builder = Retrofit.Builder()
-                    .baseUrl("http://117.55.241.44:8074/")
+                    .baseUrl("https://akgec.in/sportsevent18/")
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
             private val siRetrofit:Retrofit = siBuilder.build()

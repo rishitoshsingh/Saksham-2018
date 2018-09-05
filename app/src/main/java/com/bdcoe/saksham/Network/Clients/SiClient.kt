@@ -11,7 +11,7 @@ import retrofit2.http.POST
  * Created by rishi on 2/9/18.
  */
 interface SiClient {
-    @POST("/api/StudentRegister")
+    @POST("api/Registration/Register")
     @Headers("Content-Type: application/json")
     fun registerUser(@Body studentRegister: RequestBody): Call<String>
 }
