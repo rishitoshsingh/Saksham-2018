@@ -62,10 +62,17 @@ class NewsFragment : Fragment() {
                 if (news.image3 != null )   images.add(news.image3)
                 if (news.image4 != null )   images.add(news.image4)
 
-                bundle.putString("NewsTeams", news.teams)
-                bundle.putString("NewsTitle", news.sport.trim())
+
                 bundle.putString("NewsDescription", news.desc)
-                bundle.putInt("Icon",getSportsDrawable(news.sport.trim()))
+                if (news.sport.isEmpty()){
+                    bundle.putInt("Icon",R.drawable.bdc_white)
+                    bundle.putString("NewsTeams", "")
+                    bundle.putString("NewsTitle", "Welcome")
+                } else {
+                    bundle.putInt("Icon",getSportsDrawable(news.sport.trim()))
+                    bundle.putString("NewsTeams", news.teams)
+                    bundle.putString("NewsTitle", news.sport.trim())
+                }
 
                 val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
                 val date = sdf.parse(news.timestamp)
@@ -101,7 +108,7 @@ class NewsFragment : Fragment() {
         call.enqueue(object : Callback<NewsResult> {
             override fun onFailure(call: Call<NewsResult>?, t: Throwable?) {
                 if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
-                Toast.makeText(context, "Load News Failed", Toast.LENGTH_SHORT).show()
+                if (context != null) Toast.makeText(context, "Load News Failed", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<NewsResult>?, response: Response<NewsResult>?) {

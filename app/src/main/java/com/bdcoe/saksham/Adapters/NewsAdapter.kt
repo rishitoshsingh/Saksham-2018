@@ -45,7 +45,13 @@ abstract class NewsAdapter(context: Context, moviesPassed: ArrayList<List>) : Re
         val newsViewHolder = holder as NewsMovieHolder
         val news = newsArrayList[position]
 
-        sportsIcon = getSportsDrawable(news.sport.trim())
+        if (news.teams.isEmpty()){
+            sportsIcon = R.drawable.bdc_white
+            news.teams = "Welcome"
+            news.sport = ""
+        } else {
+            sportsIcon = getSportsDrawable(news.sport.trim())
+        }
         newsViewHolder.newsIcon.setImageDrawable(mContext.getDrawable(sportsIcon))
 
 
