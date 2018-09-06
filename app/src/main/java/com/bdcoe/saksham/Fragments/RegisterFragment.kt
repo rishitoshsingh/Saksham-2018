@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.Toast
 import com.bdcoe.saksham.Network.Clients.SiClient
-import com.bdcoe.saksham.Network.Model
 import com.bdcoe.saksham.Network.ServiceGenerator
 import com.bdcoe.saksham.R
 import kotlinx.android.synthetic.main.fragment_register.*
@@ -176,7 +175,7 @@ class RegisterFragment : Fragment() {
                             interest = interest.substring(0, interest.length - 1)
 //                            val model = Model(name, studentNo, branch, year, contactNumber, interest, hostler, sex)
 
-                            try{
+                            try {
 
                                 val NAME = "Name"
                                 val ST_NO = "StudentNo"
@@ -201,33 +200,32 @@ class RegisterFragment : Fragment() {
                                 val body = RequestBody.create(JSON, json.toString())
 
 
+                                val call = callRegisterUser(body)
+                                try {
 
-                            val call = callRegisterUser(body)
-                            try {
-
-                                call.enqueue(object : Callback<String> {
-                                    override fun onFailure(call: Call<String>?, t: Throwable?) {
-                                        Toast.makeText(activity, "Registration Failed", Toast.LENGTH_LONG).show()
-                                    }
-
-                                    override fun onResponse(call: Call<String>?, response: Response<String>?) {
-                                        val resultName = response?.body()
-                                        if (response!!.isSuccessful) {
-                                            Toast.makeText(activity, "Registered", Toast.LENGTH_LONG).show()
-                                        } else {
+                                    call.enqueue(object : Callback<String> {
+                                        override fun onFailure(call: Call<String>?, t: Throwable?) {
                                             Toast.makeText(activity, "Registration Failed", Toast.LENGTH_LONG).show()
                                         }
 
-                                    }
-                                })
-                            } catch (ex: Exception) {
+                                        override fun onResponse(call: Call<String>?, response: Response<String>?) {
+                                            val resultName = response?.body()
+                                            if (resultName == name) {
+                                                Toast.makeText(activity, "Registered", Toast.LENGTH_LONG).show()
+                                            } else {
+                                                Toast.makeText(activity, "Already Registered", Toast.LENGTH_LONG).show()
+                                            }
+
+                                        }
+                                    })
+                                } catch (ex: Exception) {
+                                    Toast.makeText(activity, "Registration Failed", Toast.LENGTH_LONG).show()
+                                    Log.d("Registration", "Failed", ex)
+                                }
+
+                            } catch (e: Exception) {
                                 Toast.makeText(activity, "Registration Failed", Toast.LENGTH_LONG).show()
-                                Log.d("Registration", "Failed", ex)
-                            }
-
-                            }
-                            catch(e: Exception){
-
+                                Log.d("Registration", "Failed", e)
                             }
 
                         } else {
