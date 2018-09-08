@@ -3,9 +3,11 @@ package com.bdcoe.saksham.Fragments
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.SnapHelper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -108,7 +110,7 @@ class NewsFragment : Fragment() {
         call.enqueue(object : Callback<NewsResult> {
             override fun onFailure(call: Call<NewsResult>?, t: Throwable?) {
                 if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
-                if (context != null) Toast.makeText(context, "Load News Failed", Toast.LENGTH_SHORT).show()
+                Snackbar.make(news_swipe_refresh,"News Load Failed", Snackbar.LENGTH_LONG).show()
             }
 
             override fun onResponse(call: Call<NewsResult>?, response: Response<NewsResult>?) {

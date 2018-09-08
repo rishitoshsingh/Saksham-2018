@@ -2,6 +2,7 @@ package com.bdcoe.saksham.Fragments
 
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import android.widget.Toast
 import com.bdcoe.saksham.Network.Clients.SiClient
 import com.bdcoe.saksham.Network.ServiceGenerator
 import com.bdcoe.saksham.R
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import okhttp3.MediaType
 import okhttp3.RequestBody
@@ -86,6 +88,7 @@ class RegisterFragment : Fragment() {
         }
 
         register_button.setOnClickListener {
+
             val name = register_name.text.toString()
             val studentNo = register_student_no.text.toString()
             val contactNumber = register_conatct_no.text.toString()
@@ -177,6 +180,8 @@ class RegisterFragment : Fragment() {
 
                             try {
 
+                                val waitSnackbar = Snackbar.make(register_root,"Registering...",Snackbar.LENGTH_LONG)
+                                waitSnackbar.show()
                                 val NAME = "Name"
                                 val ST_NO = "StudentNo"
                                 val NUMBER = "ContactNumber"
@@ -205,40 +210,47 @@ class RegisterFragment : Fragment() {
 
                                     call.enqueue(object : Callback<String> {
                                         override fun onFailure(call: Call<String>?, t: Throwable?) {
-                                            Toast.makeText(activity, "Registration Failed", Toast.LENGTH_LONG).show()
+                                            try {
+                                                waitSnackbar.dismiss()
+                                                Snackbar.make(register_root,"Registration Failed",Snackbar.LENGTH_LONG).show()
+                                            } catch (ex:Exception){ }
                                         }
-
                                         override fun onResponse(call: Call<String>?, response: Response<String>?) {
                                             val resultName = response?.body()
                                             if (resultName == name) {
-                                                Toast.makeText(activity, "Registered", Toast.LENGTH_LONG).show()
+                                                try {
+                                                    waitSnackbar.dismiss()
+                                                    Snackbar.make(register_root,"Registered",Snackbar.LENGTH_LONG).show()
+                                                }catch (ex:Exception){}
                                             } else {
-                                                Toast.makeText(activity, "Already Registered", Toast.LENGTH_LONG).show()
+                                                try {
+                                                    waitSnackbar.dismiss()
+                                                    Snackbar.make(register_root,"Already Registered", Snackbar.LENGTH_LONG).show()
+                                                } catch (ex:Exception) {}
                                             }
-
                                         }
                                     })
                                 } catch (ex: Exception) {
-                                    Toast.makeText(activity, "Registration Failed", Toast.LENGTH_LONG).show()
+                                    waitSnackbar.dismiss()
+                                    Snackbar.make(register_root,"Registration Failed", Snackbar.LENGTH_LONG).show()
                                     Log.d("Registration", "Failed", ex)
                                 }
-
                             } catch (e: Exception) {
-                                Toast.makeText(activity, "Registration Failed", Toast.LENGTH_LONG).show()
+                                Snackbar.make(register_root,"Registration Failed", Snackbar.LENGTH_LONG).show()
                                 Log.d("Registration", "Failed", e)
                             }
 
                         } else {
-                            Toast.makeText(activity, "No sport is selected", Toast.LENGTH_LONG).show()
+                            Snackbar.make(register_root,"No sport is selected", Snackbar.LENGTH_LONG).show()
                         }
                     } else {
-                        Toast.makeText(activity, "Wrong Phone Number.Do not add +91", Toast.LENGTH_LONG).show()
+                        Snackbar.make(register_root,"Wrong Phone Number.Do not add +91", Snackbar.LENGTH_LONG).show()
                     }
                 } else {
-                    Toast.makeText(activity, "Wrong Student Number", Toast.LENGTH_LONG).show()
+                    Snackbar.make(register_root,"Wrong Student Number", Snackbar.LENGTH_LONG).show()
                 }
             } else {
-                Toast.makeText(activity, "Fill your name", Toast.LENGTH_LONG).show()
+                Snackbar.make(register_root,"Fill your name", Snackbar.LENGTH_LONG).show()
             }
         }
     }

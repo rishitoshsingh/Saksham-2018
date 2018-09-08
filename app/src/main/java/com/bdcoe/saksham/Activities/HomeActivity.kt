@@ -20,7 +20,6 @@ import com.elmargomez.typer.Font
 
 class HomeActivity : AppCompatActivity() {
 
-    lateinit var bottomNavigationBar: AHBottomNavigation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,8 +69,7 @@ class HomeActivity : AppCompatActivity() {
         val item2 = AHBottomNavigationItem(resources.getString(R.string.home), resources.getDrawable(R.drawable.home))
         val item3 = AHBottomNavigationItem(resources.getString(R.string.register), resources.getDrawable(R.drawable.ic_person_add_black_24dp))
         val item4 = AHBottomNavigationItem(resources.getString(R.string.about_us), resources.getDrawable(R.drawable.ic_info_outline_black_48dp))
-
-        bottomNavigationBar = bottom_navigation
+        val bottomNavigationBar: AHBottomNavigation = bottom_navigation
         bottomNavigationBar.addItem(item0)
         bottomNavigationBar.addItem(item1)
         bottomNavigationBar.addItem(item2)

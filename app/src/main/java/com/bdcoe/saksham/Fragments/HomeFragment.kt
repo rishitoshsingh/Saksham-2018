@@ -7,6 +7,7 @@ import android.graphics.drawable.TransitionDrawable
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
@@ -29,6 +30,7 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
+import com.github.mikephil.charting.interfaces.datasets.IPieDataSet
 import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -43,7 +45,6 @@ class HomeFragment : Fragment() {
     private lateinit var colorChangeHandler: Handler
     private lateinit var colorChangingRunnable: Runnable
     private var fragmentRunning: Boolean = false
-    private lateinit var pieChart: PieChart
 
     private val POLL_DIALOG_REQUEST_CODE: Int = 90
     private val POLL_SUBMITTED_CODE: Int = 1
@@ -65,7 +66,6 @@ class HomeFragment : Fragment() {
         loadMedalTally()
         loadPolls()
 
-        pieChart = view.findViewById<PieChart>(R.id.poll_chart)
 //        initializePollChart(pieChart)
         initializeHeaderAnimation()
         initializeClickListners()
@@ -119,7 +119,7 @@ class HomeFragment : Fragment() {
         description.text = ""
         pieChart.description = description
         val data = PieData() // initialize Piedata
-        data.dataSet = dataSet
+        data.dataSet = dataSet as IPieDataSet?
         data.setValueFormatter(PercentFormatter())
         pieChart.data = data
 
@@ -228,21 +228,25 @@ class HomeFragment : Fragment() {
             private fun populateMedalsInTable(list: List<com.bdcoe.saksham.POJOs.Medals.List>?) {
                 if (medal_row_placeholder != null) medal_row_placeholder.visibility = View.GONE
                 list?.forEach {
-                    val inflater = LayoutInflater.from(context)
-                    val view = inflater.inflate(R.layout.medal_tally_row, null)
-                    val teamTextView = view.findViewById<TextView>(R.id.row_team)
-                    val goldTextView = view.findViewById<TextView>(R.id.row_gold)
-                    val silverTextView = view.findViewById<TextView>(R.id.row_silver)
-                    val bronzeTextView = view.findViewById<TextView>(R.id.row_bronze)
-                    val totalTextView = view.findViewById<TextView>(R.id.row_total)
+                    try {
+                        val inflater = LayoutInflater.from(context)
+                        val view = inflater.inflate(R.layout.medal_tally_row, null)
+                        val teamTextView = view.findViewById<TextView>(R.id.row_team)
+                        val goldTextView = view.findViewById<TextView>(R.id.row_gold)
+                        val silverTextView = view.findViewById<TextView>(R.id.row_silver)
+                        val bronzeTextView = view.findViewById<TextView>(R.id.row_bronze)
+                        val totalTextView = view.findViewById<TextView>(R.id.row_total)
 
-                    teamTextView.text = it.branch
-                    goldTextView.text = it.gold
-                    silverTextView.text = it.silver
-                    bronzeTextView.text = it.bronze
-                    totalTextView.text = it.total
+                        teamTextView.text = it.branch
+                        goldTextView.text = it.gold
+                        silverTextView.text = it.silver
+                        bronzeTextView.text = it.bronze
+                        totalTextView.text = it.total
 
-                    medal_tally_linear_root.addView(view)
+                        medal_tally_linear_root.addView(view)
+                    } catch (ex:Exception){
+                        Log.d("MedalLoadFailed", ex.toString())
+                    }
                 }
 
             }
@@ -254,7 +258,7 @@ class HomeFragment : Fragment() {
         val call = callPolls()
         call.enqueue(object : Callback<PollResult> {
             override fun onFailure(call: Call<PollResult>?, t: Throwable?) {
-                if (context != null) Toast.makeText(context, "Polls Load Failed", Toast.LENGTH_SHORT).show()
+                Snackbar.make(home_root,"Polls Load Failed", Snackbar.LENGTH_LONG).show()
             }
 
             override fun onResponse(call: Call<PollResult>?, response: Response<PollResult>?) {
@@ -270,6 +274,9 @@ class HomeFragment : Fragment() {
                         pollsArray.add(data.list[0].ceei.toFloat())
                         pollsArray.add(data.list[0].mca.toFloat())
                     }
+                    val pieChart: PieChart = view?.findViewById<PieChart>(R.id.poll_chart)!!
+
+
                     initializePollChart(pieChart, pollsArray)
                     total_responses.text = data?.list!![0].total.toString() + " Responses so far"
                 } catch (ex: Exception) {

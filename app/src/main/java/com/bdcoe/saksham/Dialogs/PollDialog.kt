@@ -2,12 +2,9 @@ package com.bdcoe.saksham.Dialogs
 
 import android.app.Dialog
 import android.content.Context
-import android.content.DialogInterface
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
@@ -76,10 +73,10 @@ class PollDialog : android.support.v4.app.DialogFragment() {
             mSubmitButton.isEnabled = false
 
             mSubmitButton.setOnClickListener {
-                postPollRequest(mSpinner.selectedItem.toString(),sharedPreferences)
+                postPollRequest(mSpinner.selectedItem.toString(), sharedPreferences)
             }
             mCloseButton.setOnClickListener {
-                targetFragment?.onActivityResult(90,0,activity?.intent)
+                targetFragment?.onActivityResult(90, 0, activity?.intent)
                 dialog.dismiss()
             }
         } else {
@@ -88,7 +85,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
             mCloseButton = view.findViewById<Button>(R.id.voted_for_close_button)
 
             mCloseButton.setOnClickListener {
-                targetFragment?.onActivityResult(90,0,activity?.intent)
+                targetFragment?.onActivityResult(90, 0, activity?.intent)
                 dialog.dismiss()
             }
         }
@@ -100,7 +97,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
 
     }
 
-    private fun postPollRequest(branch: String, sharedPreferences:SharedPreferences) {
+    private fun postPollRequest(branch: String, sharedPreferences: SharedPreferences) {
 
         var dataflow: Int = 0
         when (branch) {
@@ -113,21 +110,23 @@ class PollDialog : android.support.v4.app.DialogFragment() {
             "MCA / MBA" -> dataflow = 7
         }
         val call = callPolls(dataflow.toString())
-        call.enqueue(object : Callback<PollResult>{
+        call.enqueue(object : Callback<PollResult> {
             override fun onFailure(call: Call<PollResult>?, t: Throwable?) {
-                if (context != null) Toast.makeText(context, "Polls Submit Failed", Toast.LENGTH_SHORT).show()
-                targetFragment?.onActivityResult(90,0,activity?.intent)
+                if (context != null) Toast.makeText(context, "Vote Submit Failed", Toast.LENGTH_SHORT).show()
+                targetFragment?.onActivityResult(90, 0, activity?.intent)
                 dialog.dismiss()
             }
+
             override fun onResponse(call: Call<PollResult>?, response: Response<PollResult>?) {
-                if (context != null) Toast.makeText(context, "Polls Submited.", Toast.LENGTH_SHORT).show()
+                if (context != null) Toast.makeText(context, "Vote Submited.", Toast.LENGTH_SHORT).show()
                 val editor = sharedPreferences.edit()
                 editor.putBoolean("Voted", true)
                 editor.putString("VotedFor", mSpinner.selectedItem.toString())
                 editor.commit()
-                targetFragment?.onActivityResult(90,1,activity?.intent)
-                dialog.dismiss()
-
+                try {
+                    targetFragment?.onActivityResult(90, 1, activity?.intent)
+                    dialog.dismiss()
+                } catch (ex: Exception) { }
             }
         })
 
