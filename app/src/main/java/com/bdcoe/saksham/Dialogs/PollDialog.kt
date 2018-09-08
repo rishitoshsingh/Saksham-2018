@@ -99,6 +99,8 @@ class PollDialog : android.support.v4.app.DialogFragment() {
 
     private fun postPollRequest(branch: String, sharedPreferences: SharedPreferences) {
 
+        mSubmitButton.isEnabled = false
+
         var dataflow: Int = 0
         when (branch) {
             "CS" -> dataflow = 5
@@ -112,6 +114,7 @@ class PollDialog : android.support.v4.app.DialogFragment() {
         val call = callPolls(dataflow.toString())
         call.enqueue(object : Callback<PollResult> {
             override fun onFailure(call: Call<PollResult>?, t: Throwable?) {
+                mSubmitButton.isEnabled = true
                 if (context != null) Toast.makeText(context, "Vote Submit Failed", Toast.LENGTH_SHORT).show()
                 targetFragment?.onActivityResult(90, 0, activity?.intent)
                 dialog.dismiss()

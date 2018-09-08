@@ -9,11 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.Toast
 import com.bdcoe.saksham.Network.Clients.SiClient
 import com.bdcoe.saksham.Network.ServiceGenerator
 import com.bdcoe.saksham.R
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import okhttp3.MediaType
 import okhttp3.RequestBody
@@ -113,74 +111,26 @@ class RegisterFragment : Fragment() {
                         if (isSportSelected()) {
                             var interest = ""
 
-                            var i = 0
-                            if (c1.isChecked) {
-                                interest = c1.text.toString() + ","
-                                i++
-                            }
-                            if (c2.isChecked) {
-                                interest = interest + c2.text.toString() + ","
-                                i++
-                            }
-                            if (c3.isChecked) {
-                                interest = interest + c3.text.toString() + ","
-                                i++
-                            }
-                            if (c4.isChecked) {
-                                interest = interest + c4.text.toString() + ","
-                                i++
-                            }
-                            if (c5.isChecked) {
-                                interest = interest + c5.text.toString() + ","
-                                i++
-                            }
-                            if (c6.isChecked) {
-                                interest = interest + c6.text.toString() + ","
-                                i++
-                            }
-                            if (c7.isChecked) {
-                                interest = interest + c7.text.toString() + ","
-                                i++
-                            }
-                            if (c8.isChecked) {
-                                interest = interest + c8.text.toString() + ","
-                                i++
-                            }
-                            if (c9.isChecked) {
-                                interest = interest + c9.text.toString() + ","
-                                i++
-                            }
-                            if (c10.isEnabled && c10.isChecked) {
-                                interest = interest + c10.text.toString() + ","
-                                i++
-                            }
-                            if (c11.isEnabled && c11.isChecked) {
-                                interest = interest + c11.text.toString() + ","
-                                i++
-                            }
-                            if (c12.isEnabled && c12.isChecked) {
-                                interest = interest + c12.text.toString() + ","
-                                i++
-                            }
-                            if (c13.isEnabled && c13.isChecked) {
-                                interest = interest + c13.text.toString() + ","
-                                i++
-                            }
-                            if (c14.isEnabled && c14.isChecked) {
-                                interest = interest + c14.text.toString() + ","
-                                i++
-                            }
-                            if (c15.isEnabled && c15.isChecked) {
-                                interest = interest + c15.text.toString() + ","
-                                i++
-                            }
+                            if (c1.isChecked) interest = c1.text.toString() + ","
+                            if (c2.isChecked) interest = interest + c2.text.toString() + ","
+                            if (c3.isChecked) interest = interest + c3.text.toString() + ","
+                            if (c4.isChecked) interest = interest + c4.text.toString() + ","
+                            if (c5.isChecked) interest = interest + c5.text.toString() + ","
+                            if (c6.isChecked) interest = interest + c6.text.toString() + ","
+                            if (c7.isChecked) interest = interest + c7.text.toString() + ","
+                            if (c8.isChecked) interest = interest + c8.text.toString() + ","
+                            if (c9.isChecked) interest = interest + c9.text.toString() + ","
+                            if (c10.isEnabled && c10.isChecked) interest = interest + c10.text.toString() + ","
+                            if (c11.isEnabled && c11.isChecked) interest = interest + c11.text.toString() + ","
+                            if (c12.isEnabled && c12.isChecked) interest = interest + c12.text.toString() + ","
+                            if (c13.isEnabled && c13.isChecked) interest = interest + c13.text.toString() + ","
+                            if (c14.isEnabled && c14.isChecked) interest = interest + c14.text.toString() + ","
+                            if (c15.isEnabled && c15.isChecked) interest = interest + c15.text.toString() + ","
 
                             interest = interest.substring(0, interest.length - 1)
-//                            val model = Model(name, studentNo, branch, year, contactNumber, interest, hostler, sex)
 
                             try {
-
-                                val waitSnackbar = Snackbar.make(register_root,"Registering...",Snackbar.LENGTH_LONG)
+                                val waitSnackbar = Snackbar.make(register_root, "Registering...", Snackbar.LENGTH_INDEFINITE)
                                 waitSnackbar.show()
                                 val NAME = "Name"
                                 val ST_NO = "StudentNo"
@@ -207,50 +157,57 @@ class RegisterFragment : Fragment() {
 
                                 val call = callRegisterUser(body)
                                 try {
-
+                                    register_button.isEnabled = false
                                     call.enqueue(object : Callback<String> {
                                         override fun onFailure(call: Call<String>?, t: Throwable?) {
                                             try {
+                                                register_button.isEnabled = true
                                                 waitSnackbar.dismiss()
-                                                Snackbar.make(register_root,"Registration Failed",Snackbar.LENGTH_LONG).show()
-                                            } catch (ex:Exception){ }
+                                                Snackbar.make(register_root, "Registration Failed", Snackbar.LENGTH_LONG).show()
+                                            } catch (ex: Exception) {
+                                            }
                                         }
+
                                         override fun onResponse(call: Call<String>?, response: Response<String>?) {
+                                            register_button.isEnabled = true
                                             val resultName = response?.body()
                                             if (resultName == name) {
                                                 try {
                                                     waitSnackbar.dismiss()
-                                                    Snackbar.make(register_root,"Registered",Snackbar.LENGTH_LONG).show()
-                                                }catch (ex:Exception){}
+                                                    Snackbar.make(register_root, "Registered", Snackbar.LENGTH_LONG).show()
+                                                } catch (ex: Exception) {
+                                                }
                                             } else {
                                                 try {
                                                     waitSnackbar.dismiss()
-                                                    Snackbar.make(register_root,"Already Registered", Snackbar.LENGTH_LONG).show()
-                                                } catch (ex:Exception) {}
+                                                    Snackbar.make(register_root, "Already Registered", Snackbar.LENGTH_LONG).show()
+                                                } catch (ex: Exception) {
+                                                }
                                             }
                                         }
                                     })
                                 } catch (ex: Exception) {
+                                    register_button.isEnabled = true
                                     waitSnackbar.dismiss()
-                                    Snackbar.make(register_root,"Registration Failed", Snackbar.LENGTH_LONG).show()
+                                    Snackbar.make(register_root, "Registration Failed", Snackbar.LENGTH_LONG).show()
                                     Log.d("Registration", "Failed", ex)
                                 }
                             } catch (e: Exception) {
-                                Snackbar.make(register_root,"Registration Failed", Snackbar.LENGTH_LONG).show()
+                                Snackbar.make(register_root, "Registration Failed", Snackbar.LENGTH_LONG).show()
                                 Log.d("Registration", "Failed", e)
                             }
 
                         } else {
-                            Snackbar.make(register_root,"No sport is selected", Snackbar.LENGTH_LONG).show()
+                            Snackbar.make(register_root, "No sport is selected", Snackbar.LENGTH_LONG).show()
                         }
                     } else {
-                        Snackbar.make(register_root,"Wrong Phone Number.Do not add +91", Snackbar.LENGTH_LONG).show()
+                        Snackbar.make(register_root, "Wrong Phone Number.Do not add +91", Snackbar.LENGTH_LONG).show()
                     }
                 } else {
-                    Snackbar.make(register_root,"Wrong Student Number", Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(register_root, "Wrong Student Number", Snackbar.LENGTH_LONG).show()
                 }
             } else {
-                Snackbar.make(register_root,"Fill your name", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(register_root, "Fill your name", Snackbar.LENGTH_LONG).show()
             }
         }
     }
