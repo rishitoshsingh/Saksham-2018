@@ -22,25 +22,25 @@ class ServiceGenerator {
             private val client: OkHttpClient = builder.build()
 
             private val bdcoeBuilder: Retrofit.Builder = Retrofit.Builder()
-                    .baseUrl("http://saksham2015.pe.hu/")
+                    .baseUrl("http://bdcoesport.000webhostapp.com/")
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
             private val retrofit:Retrofit = bdcoeBuilder.build()
 
-            private val siBuilder:Retrofit.Builder = Retrofit.Builder()
-                    .baseUrl("https://akgec.in/sportsevent18/")
-                    .client(client)
-                    .addConverterFactory(GsonConverterFactory.create())
-            private val siRetrofit:Retrofit = siBuilder.build()
+//            private val siBuilder:Retrofit.Builder = Retrofit.Builder()
+//                    .baseUrl("https://akgec.in/sportsevent18/")
+//                    .client(client)
+//                    .addConverterFactory(GsonConverterFactory.create())
+//            private val siRetrofit:Retrofit = siBuilder.build()
 
 
             fun <S> createBdcoeService(serviceClass: Class<S>):S {
                 return retrofit.create(serviceClass)
             }
 
-            fun <S> createSiService(serviceClass: Class<S>):S {
-                return siRetrofit.create(serviceClass)
-            }
+//            fun <S> createSiService(serviceClass: Class<S>):S {
+//                return siRetrofit.create(serviceClass)
+//            }
 
         }
 

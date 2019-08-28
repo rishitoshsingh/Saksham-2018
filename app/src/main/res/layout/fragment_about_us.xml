@@ -206,7 +206,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/yash"
+                            android:src="@drawable/ishit"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="176dp" />
@@ -218,7 +218,7 @@
                             android:fontFamily="@font/roboto_light"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp"
-                            android:text="Yash Saxena" />
+                            android:text="Ishit Bansal" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -240,7 +240,7 @@
                                 android:layout_height="wrap_content"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Ph No 8448161159"
+                                android:text="Ph No 7065572848"
                                 android:textAllCaps="false"
                                 android:textColor="@color/colorAccent"
                                 android:visibility="visible" />
@@ -276,7 +276,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/anubhav"
+                            android:src="@drawable/utkarsh"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="176dp" />
@@ -288,7 +288,7 @@
                             android:fontFamily="@font/roboto_light"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp"
-                            android:text="Anubhav Panwar" />
+                            android:text="Utkarsh Srivastava" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -310,7 +310,7 @@
                                 android:layout_height="wrap_content"
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Ph no 9810583629"
+                                android:text="Ph no 8447223590"
                                 android:textAllCaps="false"
                                 android:textColor="@color/colorAccent"
                                 android:visibility="visible" />
@@ -355,7 +355,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/harshita"
+                            android:src="@drawable/moulisha"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="176dp" />
@@ -367,7 +367,7 @@
                             android:fontFamily="@font/roboto_light"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp"
-                            android:text="Harshita Mishra" />
+                            android:text="Moullisha Singh " />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -411,160 +411,160 @@
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:focusableInTouchMode="true"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true">
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:focusableInTouchMode="true"-->
+                    <!--app:cardCornerRadius="8dp"-->
+                    <!--app:cardElevation="4dp"-->
+                    <!--app:cardUseCompatPadding="true">-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
 
-                        <ImageView
-                            android:src="@drawable/shaurya"
-                            android:scaleType="centerCrop"
-                            android:layout_width="match_parent"
-                            android:layout_height="176dp" />
+                        <!--<ImageView-->
+                            <!--android:src="@drawable/shaurya"-->
+                            <!--android:scaleType="centerCrop"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="176dp" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light"
-                            android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Shaurya Parashar" />
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:fontFamily="@font/roboto_light"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="16sp"-->
+                            <!--android:text="Shaurya Parashar" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Vice Captain(Boys)"
-                            android:fontFamily="@font/roboto_light_italic"
-                            android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:text="Vice Captain(Boys)"-->
+                            <!--android:fontFamily="@font/roboto_light_italic"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="13sp"/>-->
 
-                        <LinearLayout
-                            android:visibility="gone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                        <!--<LinearLayout-->
+                            <!--android:visibility="gone"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal">-->
 
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible" />
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Action1"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="invisible" />-->
 
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action2"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible" />
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Action2"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="invisible" />-->
 
-                        </LinearLayout>
+                        <!--</LinearLayout>-->
 
-                    </LinearLayout>
+                    <!--</LinearLayout>-->
 
-                </android.support.v7.widget.CardView>
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:focusableInTouchMode="true"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:src="@drawable/rupanshi"
-                            android:scaleType="centerCrop"
-                            android:layout_width="match_parent"
-                            android:layout_height="176dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light"
-                            android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Rupanshi Rastogi" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Vice Captain(Girls)"
-                            android:fontFamily="@font/roboto_light_italic"
-                            android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
-
-                        <LinearLayout
-                            android:visibility="gone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Ph No. 8448161159"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="visible"
-                                />
-
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action2"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible" />
+                <!--</android.support.v7.widget.CardView>-->
 
 
 
-                        </LinearLayout>
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
 
-                    </LinearLayout>
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:focusableInTouchMode="true"-->
+                    <!--app:cardCornerRadius="8dp"-->
+                    <!--app:cardElevation="4dp"-->
+                    <!--app:cardUseCompatPadding="true">-->
 
-                </android.support.v7.widget.CardView>
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<ImageView-->
+                            <!--android:src="@drawable/rupanshi"-->
+                            <!--android:scaleType="centerCrop"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="176dp" />-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:fontFamily="@font/roboto_light"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="16sp"-->
+                            <!--android:text="Rupanshi Rastogi" />-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:text="Vice Captain(Girls)"-->
+                            <!--android:fontFamily="@font/roboto_light_italic"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="13sp"/>-->
+
+                        <!--<LinearLayout-->
+                            <!--android:visibility="gone"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal">-->
+
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Ph No. 8448161159"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="visible"-->
+                                <!--/>-->
+
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Action2"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="invisible" />-->
+
+
+
+                        <!--</LinearLayout>-->
+
+                    <!--</LinearLayout>-->
+
+                <!--</android.support.v7.widget.CardView>-->
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -612,14 +612,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/rishi" />
+                            android:src="@drawable/ripu" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Rishitosh Kumar Singh "
+                            android:text="Ripudaman Singh "
                             android:textColor="@color/primary_text"
                             android:textSize="16sp" />
 
@@ -684,14 +684,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/srijan" />
+                            android:src="@drawable/shashank" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Srijan Prakash"
+                            android:text="Shashank Sahai"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp" />
 
@@ -762,14 +762,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/varun2" />
+                            android:src="@drawable/shikhar" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Varun Singh Negi"
+                            android:text="Shikhar Agarwal"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp" />
 
@@ -816,34 +816,6 @@
 
                 </android.support.v7.widget.CardView>
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:padding="16dp"
-            android:text="@string/bdcoe_coordinators"
-            android:textColor="@color/primary_text"
-            android:textSize="22sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
                 <android.support.v7.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -862,14 +834,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/kunwar" />
+                            android:src="@drawable/deepak" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Kunwar Ashutosh Singh"
+                            android:text="Deepak Chaurasia"
                             android:textColor="@color/primary_text"
                             android:textSize="16sp" />
 
@@ -878,10 +850,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:fontFamily="@font/roboto_light_italic"
-                            android:text="Sports Officer"
+                            android:text="Designer"
                             android:textColor="@color/primary_text"
-                            android:textSize="13sp"
-                            android:visibility="gone" />
+                            android:textSize="13sp" />
 
                         <LinearLayout
                             android:visibility="gone"
@@ -909,158 +880,7 @@
                                 android:text="Action2"
                                 android:textAllCaps="false"
                                 android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:focusableInTouchMode="true"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="176dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/anupam" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light"
-                            android:text="Anupam Kumar Singh"
-                            android:textColor="@color/primary_text"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light_italic"
-                            android:text="Sports Officer"
-                            android:textColor="@color/primary_text"
-                            android:textSize="13sp"
-                            android:visibility="gone" />
-
-                        <LinearLayout
-                            android:visibility="gone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
-
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action2"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:focusableInTouchMode="true"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="176dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/ashutosh" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light"
-                            android:text="Ashutosh Anand"
-                            android:textColor="@color/primary_text"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light_italic"
-                            android:text="Sports Officer"
-                            android:textColor="@color/primary_text"
-                            android:textSize="13sp"
-                            android:visibility="gone" />
-
-                        <LinearLayout
-                            android:visibility="gone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
-
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action2"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
+                                android:visibility="invisible" />
 
                         </LinearLayout>
 
@@ -1070,264 +890,265 @@
 
                 <View
                     android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="0"
                     android:layout_height="match_parent"/>
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
-            android:padding="16dp"
-            android:text="@string/media_team"
-            android:textColor="@color/primary_text"
-            android:textSize="22sp"
-            android:visibility="invisible"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="@font/roboto_medium"-->
+            <!--android:padding="16dp"-->
+            <!--android:text="@string/bdcoe_coordinators"-->
+            <!--android:textColor="@color/primary_text"-->
+            <!--android:textSize="22sp" />-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:focusableInTouchMode="true"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true">
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:focusableInTouchMode="true"-->
+                    <!--app:cardCornerRadius="8dp"-->
+                    <!--app:cardElevation="4dp"-->
+                    <!--app:cardUseCompatPadding="true">-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
 
-                        <ImageView
-                            android:src="@drawable/sabu"
-                            android:scaleType="centerCrop"
-                            android:layout_width="match_parent"
-                            android:layout_height="176dp" />
+                        <!--<ImageView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="176dp"-->
+                            <!--android:scaleType="centerCrop"-->
+                            <!--android:src="@drawable/aryan" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light"
-                            android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Mr. Pratap Singh" />
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:fontFamily="@font/roboto_light"-->
+                            <!--android:text="Aryan Chaudhary"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="16sp" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Sports Officer"
-                            android:fontFamily="@font/roboto_light_italic"
-                            android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:fontFamily="@font/roboto_light_italic"-->
+                            <!--android:text="Sports Officer"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="13sp"-->
+                            <!--android:visibility="gone" />-->
 
-                        <LinearLayout
-                            android:visibility="gone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                        <!--<LinearLayout-->
+                            <!--android:visibility="gone"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal">-->
 
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Action1"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="invisible" />-->
 
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action2"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Action2"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="invisible"/>-->
 
-                        </LinearLayout>
+                        <!--</LinearLayout>-->
 
-                    </LinearLayout>
+                    <!--</LinearLayout>-->
 
-                </android.support.v7.widget.CardView>
+                <!--</android.support.v7.widget.CardView>-->
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:focusableInTouchMode="true"-->
+                    <!--app:cardCornerRadius="8dp"-->
+                    <!--app:cardElevation="4dp"-->
+                    <!--app:cardUseCompatPadding="true">-->
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:focusableInTouchMode="true"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        <!--<ImageView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="176dp"-->
+                            <!--android:scaleType="centerCrop"-->
+                            <!--android:src="@drawable/rishi" />-->
 
-                        <ImageView
-                            android:src="@drawable/sabu"
-                            android:scaleType="centerCrop"
-                            android:layout_width="match_parent"
-                            android:layout_height="176dp" />
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:fontFamily="@font/roboto_light"-->
+                            <!--android:text="Rishitosh Kumar Singh"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="16sp" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light"
-                            android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Mr. Pratap Singh" />
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:fontFamily="@font/roboto_light_italic"-->
+                            <!--android:text="Sports Officer"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="13sp"-->
+                            <!--android:visibility="gone" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Sports Officer"
-                            android:fontFamily="@font/roboto_light_italic"
-                            android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
+                        <!--<LinearLayout-->
+                            <!--android:visibility="gone"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal">-->
 
-                        <LinearLayout
-                            android:visibility="gone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Action1"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="invisible"/>-->
 
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Action2"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="invisible"/>-->
 
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action2"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
+                        <!--</LinearLayout>-->
 
-                        </LinearLayout>
+                    <!--</LinearLayout>-->
 
-                    </LinearLayout>
+                <!--</android.support.v7.widget.CardView>-->
 
-                </android.support.v7.widget.CardView>
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                <!--<android.support.v7.widget.CardView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:focusableInTouchMode="true"-->
+                    <!--app:cardCornerRadius="8dp"-->
+                    <!--app:cardElevation="4dp"-->
+                    <!--app:cardUseCompatPadding="true">-->
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:focusableInTouchMode="true"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        <!--<ImageView-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="176dp"-->
+                            <!--android:scaleType="centerCrop"-->
+                            <!--android:src="@drawable/sid" />-->
 
-                        <ImageView
-                            android:src="@drawable/sabu"
-                            android:scaleType="centerCrop"
-                            android:layout_width="match_parent"
-                            android:layout_height="176dp" />
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:fontFamily="@font/roboto_light"-->
+                            <!--android:text="Siddharth Singh"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="16sp" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="@font/roboto_light"
-                            android:textColor="@color/primary_text"
-                            android:textSize="16sp"
-                            android:text="Mr. Pratap Singh" />
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:fontFamily="@font/roboto_light_italic"-->
+                            <!--android:text="Sports Officer"-->
+                            <!--android:textColor="@color/primary_text"-->
+                            <!--android:textSize="13sp"-->
+                            <!--android:visibility="gone" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Sports Officer"
-                            android:fontFamily="@font/roboto_light_italic"
-                            android:textColor="@color/primary_text"
-                            android:textSize="13sp"/>
+                        <!--<LinearLayout-->
+                            <!--android:visibility="gone"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal">-->
 
-                        <LinearLayout
-                            android:visibility="gone"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Action1"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="invisible"/>-->
 
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action1"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
+                            <!--<Button-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:fontFamily="@font/roboto_light"-->
+                                <!--android:text="Action2"-->
+                                <!--android:textAllCaps="false"-->
+                                <!--android:textColor="@color/colorAccent"-->
+                                <!--android:visibility="invisible"/>-->
 
-                            <Button
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:fontFamily="@font/roboto_light"
-                                android:text="Action2"
-                                android:textAllCaps="false"
-                                android:textColor="@color/colorAccent"
-                                android:visibility="invisible"/>
+                        <!--</LinearLayout>-->
 
-                        </LinearLayout>
+                    <!--</LinearLayout>-->
 
-                    </LinearLayout>
+                <!--</android.support.v7.widget.CardView>-->
 
-                </android.support.v7.widget.CardView>
+                <!--<View-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_height="match_parent"/>-->
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"/>
+            <!--</LinearLayout>-->
 
-            </LinearLayout>
+        <!--</LinearLayout>-->
 
-        </LinearLayout>
 
     </LinearLayout>
 

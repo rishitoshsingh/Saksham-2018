@@ -9,8 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
-import com.bdcoe.saksham.Network.Clients.SiClient
+import com.bdcoe.saksham.Network.Clients.BdcoeClient
 import com.bdcoe.saksham.Network.ServiceGenerator
+import com.bdcoe.saksham.POJOs.RegisterResult
 import com.bdcoe.saksham.R
 import kotlinx.android.synthetic.main.fragment_register.*
 import okhttp3.MediaType
@@ -26,7 +27,8 @@ import retrofit2.Response
  */
 class RegisterFragment : Fragment() {
 
-    private lateinit var client: SiClient
+//    private lateinit var client: SiClient
+    private lateinit var client: BdcoeClient
 
     private val MALE = 0
     private val FEMALE = 1
@@ -55,7 +57,7 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        client = ServiceGenerator.createSiService(SiClient::class.java)
+        client = ServiceGenerator.createBdcoeService(BdcoeClient::class.java)
         c1 = view.findViewById(R.id.athletics)
         c2 = view.findViewById(R.id.chess)
         c3 = view.findViewById(R.id.badminton)
@@ -95,14 +97,14 @@ class RegisterFragment : Fragment() {
             val genderId = register_gender_radio_group.checkedRadioButtonId
             var sex: String = ""
             when (genderId) {
-                R.id.register_male -> sex = "Male"
-                R.id.register_female -> sex = "Female"
+                R.id.register_male -> sex = "1"
+                R.id.register_female -> sex = "0"
             }
             val hostlerId = register_hostler_days_radio_group.checkedRadioButtonId
             var hostler: String = ""
             when (hostlerId) {
-                R.id.register_hostler -> hostler = "Yes"
-                R.id.register_day_scholar -> hostler = "No"
+                R.id.register_hostler -> hostler = "1"
+                R.id.register_day_scholar -> hostler = "0"
             }
 
             if (name.isNotEmpty()) {
@@ -155,11 +157,11 @@ class RegisterFragment : Fragment() {
                                 val body = RequestBody.create(JSON, json.toString())
 
 
-                                val call = callRegisterUser(body)
+                                val call = callRegisterUser("1",name,studentNo,sex,contactNumber,branch,year,hostler,interest)
                                 try {
                                     register_button.isEnabled = false
-                                    call.enqueue(object : Callback<String> {
-                                        override fun onFailure(call: Call<String>?, t: Throwable?) {
+                                    call.enqueue(object : Callback<RegisterResult> {
+                                        override fun onFailure(call: Call<RegisterResult>?, t: Throwable?) {
                                             try {
                                                 register_button.isEnabled = true
                                                 waitSnackbar.dismiss()
@@ -168,10 +170,10 @@ class RegisterFragment : Fragment() {
                                             }
                                         }
 
-                                        override fun onResponse(call: Call<String>?, response: Response<String>?) {
+                                        override fun onResponse(call: Call<RegisterResult>?, response: Response<RegisterResult>?) {
                                             register_button.isEnabled = true
-                                            val resultName = response?.body()
-                                            if (resultName == name) {
+                                            val result = response?.body()?.result
+                                            if (result==1L) {
                                                 try {
                                                     waitSnackbar.dismiss()
                                                     Snackbar.make(register_root, "Registered", Snackbar.LENGTH_LONG).show()
@@ -249,6 +251,6 @@ class RegisterFragment : Fragment() {
         Log.d("changeGames", gender.toString())
     }
 
-    private fun callRegisterUser(model: RequestBody): Call<String> = client.registerUser(model)
+    private fun callRegisterUser(dataflow:String,name:String,studentNo:String,sex:String,contactNumber:String,branch:String,year:String,hostler:String,interest:String): Call<RegisterResult> = client.postRegister(dataflow,name,studentNo,sex,contactNumber,branch,year,hostler,interest)
 
 }

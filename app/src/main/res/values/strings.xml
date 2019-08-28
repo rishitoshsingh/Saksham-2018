@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">Saksham\'18</string>
+    <string name="app_name">Saksham\'19</string>
     <string name="team">Team</string>
     <string name="gold">Gold</string>
     <string name="silver">Silver</string>
     <string name="bronze">Bronze</string>
     <string name="total">Total</string>
     <string name="read_more">Read More</string>
-    <string name="medal_tally_2018">2018\'s Medal Tally</string>
+    <string name="medal_tally_2019">2019\'s Medal Tally</string>
+    <string name="_2018">2018</string>
     <string name="_2017">2017</string>
     <string name="_2016">2016</string>
-    <string name="_2015">2015</string>
     <string name="feed">News Feed</string>
     <string name="home">Home</string>
     <string name="news">News</string>

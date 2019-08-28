@@ -135,6 +135,6 @@ class PollDialog : android.support.v4.app.DialogFragment() {
 
     }
 
-    private fun callPolls(dataflow: String): Call<PollResult> = client.postPolls(dataflow)
+    private fun callPolls(dataflow: String): Call<PollResult> = client.postPolls(dataflow,"0")
 
 }

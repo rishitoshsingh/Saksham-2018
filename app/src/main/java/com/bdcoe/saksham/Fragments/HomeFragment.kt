@@ -155,14 +155,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun initializeClickListners() {
-        show_2015.setOnClickListener {
-            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
-            val dialogFragment = MedalTallyDialog()
-            val bundle = Bundle()
-            bundle.putInt("year", 2015)
-            dialogFragment.arguments = bundle
-            dialogFragment.show(ft, "dialog")
-        }
         show_2016.setOnClickListener {
             val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
             val dialogFragment = MedalTallyDialog()
@@ -176,6 +168,14 @@ class HomeFragment : Fragment() {
             val dialogFragment = MedalTallyDialog()
             val bundle = Bundle()
             bundle.putInt("year", 2017)
+            dialogFragment.arguments = bundle
+            dialogFragment.show(ft, "dialog")
+        }
+        show_2018.setOnClickListener {
+            val ft: android.support.v4.app.FragmentTransaction = fragmentManager!!.beginTransaction()
+            val dialogFragment = MedalTallyDialog()
+            val bundle = Bundle()
+            bundle.putInt("year", 2018)
             dialogFragment.arguments = bundle
             dialogFragment.show(ft, "dialog")
         }

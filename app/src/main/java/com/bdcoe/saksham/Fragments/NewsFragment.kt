@@ -111,6 +111,7 @@ class NewsFragment : Fragment() {
             override fun onFailure(call: Call<NewsResult>?, t: Throwable?) {
                 if (news_swipe_refresh != null) news_swipe_refresh.isRefreshing = false
                 Snackbar.make(news_swipe_refresh,"News Load Failed", Snackbar.LENGTH_LONG).show()
+                Log.d("API","News Failed",t)
             }
 
             override fun onResponse(call: Call<NewsResult>?, response: Response<NewsResult>?) {

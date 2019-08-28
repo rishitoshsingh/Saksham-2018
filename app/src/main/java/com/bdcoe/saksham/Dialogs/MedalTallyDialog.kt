@@ -4,10 +4,7 @@ import android.app.Dialog
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.support.v7.app.AlertDialog
-import android.text.Layout
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
 import com.bdcoe.saksham.R
 
@@ -32,18 +29,18 @@ class MedalTallyDialog : android.support.v4.app.DialogFragment() {
         setStyle(DialogFragment.STYLE_NORMAL, R.style.MedalTallyDialogStyle)
         val bundle = this.arguments
         if (bundle != null) {
-            mYear = bundle.getInt("year", 2015)
+            mYear = bundle.getInt("year", 2016)
         }
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         val inflater = LayoutInflater.from(activity)
-        var layout:Int = R.layout.medals_tally_2015
+        var layout:Int = R.layout.medals_tally_2016
         when (mYear){
-            2015 -> layout = R.layout.medals_tally_2015
-            2016-> layout = R.layout.medals_tally_2016
-            2017 -> layout = R.layout.medals_tally_2017
+            2016 -> layout = R.layout.medals_tally_2016
+            2017-> layout = R.layout.medals_tally_2017
+            2018 -> layout = R.layout.medals_tally_2018
         }
         val view = inflater.inflate(layout, null)
 

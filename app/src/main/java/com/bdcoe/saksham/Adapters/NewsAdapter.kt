@@ -30,7 +30,7 @@ abstract class NewsAdapter(context: Context, moviesPassed: ArrayList<List>) : Re
     private val mContext = context
     var newsArrayList: ArrayList<List> = moviesPassed
 
-    private val IMAGE_BASE_URL = "http://saksham2015.pe.hu/"
+    private val IMAGE_BASE_URL = "http://bdcoesport.000webhostapp.com/"
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val newsView = LayoutInflater.from(parent.context).inflate(R.layout.news_card, parent, false)
