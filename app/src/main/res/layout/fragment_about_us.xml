@@ -56,10 +56,10 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/parashar_view"
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/prashar" />
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -128,10 +128,10 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/sabu_view"
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/sabu" />
+                            android:scaleType="centerCrop"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -206,7 +206,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/ishit"
+                            android:id="@+id/ishit_view"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="176dp" />
@@ -276,7 +276,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/utkarsh"
+                            android:id="@+id/utkarsh_view"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="176dp" />
@@ -355,7 +355,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:src="@drawable/moulisha"
+                            android:id="@+id/moulisha_view"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="176dp" />
@@ -609,10 +609,10 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/ripu_view"
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/ripu" />
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -681,10 +681,10 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/shashank_view"
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/shashank" />
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -759,10 +759,10 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/shikhar_view"
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/shikhar" />
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -831,10 +831,10 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/deepak_view"
                             android:layout_width="match_parent"
                             android:layout_height="176dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/deepak" />
+                            android:scaleType="centerCrop" />
 
                         <TextView
                             android:layout_width="wrap_content"

@@ -17,7 +17,7 @@
         android:fontFamily="@font/roboto_light"
         android:gravity="center"
         android:padding="2dp"
-        android:text="@string/_2017"
+        android:text="@string/_2016"
         android:textColor="@color/colorAccent"
         android:textSize="26sp" />
 

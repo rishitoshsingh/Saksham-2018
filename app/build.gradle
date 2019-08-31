@@ -34,8 +34,8 @@ android {
         applicationId "com.bdcoe.saksham"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 11
-        versionName "0.0.5"
+        versionCode 12
+        versionName "0.0.6"
         manifestPlaceholders = [
                 onesignal_app_id : 'f940dfed-7f60-4583-be30-c3a8e8fd89a7',
                 // Project number pulled from dashboard, local value is ignored.
