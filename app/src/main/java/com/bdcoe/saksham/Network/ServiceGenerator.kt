@@ -22,7 +22,7 @@ class ServiceGenerator {
             private val client: OkHttpClient = builder.build()
 
             private val bdcoeBuilder: Retrofit.Builder = Retrofit.Builder()
-                    .baseUrl("http://bdcoesport.000webhostapp.com/")
+                    .baseUrl("http://b*********.000webhostapp.com/")
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
             private val retrofit:Retrofit = bdcoeBuilder.build()
